@@ -12,10 +12,8 @@
 
     <title>El Estante</title>
 </head>
-<body>
-    
-
-    <div class="bg-secondary w-25">
+<body id="pag-home">
+    <!-- <div class="bg-secondary w-25">
         <h2 class="text-white">Gestionar Usuario</h2>
         <a href="#" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal1">Buscar Usuario</a><br>
         <a href="#" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal2">Insertar Usuario</a><br>
@@ -40,504 +38,532 @@
         <a href="#" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal14">Solicitar Modulo</a><br>
         <a href="#" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal15">Eliminar Modulo</a><br>
         <a href="#" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal16">Modificar Modulo</a>
+    </div> -->
+
+    <header>
+      <nav class="navbar navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand text-primary mx-auto" href="#">El Estante</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container d-flex flex-column flex-sm-row justify-content-around justify-content-sm-around align-items-sm-center text-center">
+
+      <div id="Gestionar-Usuarios" class="card mx-4 mx-sm-0 text-white shadow">
+        <div class="card-body">
+        </div>
+      </div>
+  
+      <div id="Gestionar-Modulos" class="card mx-4 mx-sm-0 text-white shadow">
+        <div class="card-body">
+        </div>
+      </div>
+  
+      <div id="Gestionar-Libros" class="card mx-4 mx-sm-0 text-white shadow">
+        <div class="card-body">
+        </div>
+      </div>
+
     </div>
+
     
 
-
-
-    <!-- Modal Buscar Usuario -->
-    <div class="modal" tabindex="-1" id="modal1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalBasicLabel">Buscar Usuario</h5>
-              <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="usauario" class="d-block mb-3">Usuario</label>
-                            <label for="nombre" class="d-block mb-3">Nombre</label>
-                            <label for="apellido" class="d-block mb-3">Apellido</label>
-                            <label for="ocupacion" class="d-block mb-3">Ocupación Laboral</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="mb-2" id="usuario" name="usuario">
-                            <input type="text" class="mb-2" id="nombre" name="nombre">
-                            <input type="text" class="mb-2" id="apellido" name="apellido">
-                            <input type="text" class="mb-2" id="ocupacion" name="ocupacion">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary"><i class="fa fa-search"></i>Buscar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal Insertar Usuario -->
-    <div class="modal" tabindex="-1" id="modal2">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalBasicLabel">Insertar Usuario</h5>
-              <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="usauario" class="d-block mb-3">Usuario</label>
-                            <label for="contraseña" class="d-block mb-3">Contraseña</label>
-                            <label for="nombre" class="d-block mb-3">Nombre</label>
-                            <label for="apellido" class="d-block mb-3">Apellido</label>
-                            <label for="rol" class="d-block mb-3">Rol o Permiso</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="mb-2" id="usuario" name="usuario">
-                            <input type="password" class="mb-2" id="contraseña" name="contraseña">
-                            <input type="text" class="mb-2" id="nombre" name="nombre">
-                            <input type="text" class="mb-2" id="apellido" name="apellido">
-                            <input type="text" class="mb-2" id="rol" name="rol">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Incertar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal Eliminar Usuario -->
-    <div class="modal" tabindex="-1" id="modal3">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalBasicLabel">Eliminar Usuario</h5>
-              <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="usauario" class="d-block mb-3">Usuario</label>
-                            <label for="contraseña" class="d-block mb-3">Contraseña</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="mb-2" id="usuario" name="usuario">
-                            <input type="password" class="mb-2" id="contraseña" name="contraseña">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary"><i class="fa fa-remove"></i>Eliminar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <!-- Modal Ordenar Usuario -->
-    <div class="modal" tabindex="-1" id="modal4">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalBasicLabel">Ordenar Usuario</h5>
-              <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="usauario" class="d-block mb-3">Usuario</label>
-                            <label for="nombre" class="d-block mb-3">Nombre</label>
-                            <label for="apellido" class="d-block mb-3">Apellido</label>
-                            <label for="rol" class="d-block mb-3">Grupo o Ocupacion laboral</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="mb-2" id="usuario" name="usuario">
-                            <input type="text" class="mb-2" id="nombre" name="nombre">
-                            <input type="text" class="mb-2" id="apellido" name="apellido">
-                            <input type="text" class="mb-2" id="grupo-o-ocupacion" name="grupo-o-ocupacion">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary"><i class="fa fa-sort-amount-asc"></i>Ordenar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <!-- Modal Modificar Usuario -->
-    <div class="modal" tabindex="-1" id="modal5">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalBasicLabel">Modificar Usuario</h5>
-              <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="usauario" class="d-block mb-3">Usuario</label>
-                            <label for="contraseña" class="d-block mb-3">Contraseña</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="mb-2" id="usuario" name="usuario">
-                            <input type="password" class="mb-2" id="contraseña" name="contraseña">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i>Modificar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <!-- Modal Insertar Libro -->
-    <div class="modal" tabindex="-1" id="modal7">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalBasicLabel">Insertar Libro</h5>
-              <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="cantidad-unidades" class="d-block mb-3">Cantidad de Unidades</label>
-                            <label for="fecha" class="d-block mb-3">Fecha</label>
-                            <label for="asignatira" class="d-block mb-3">Asignatura</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="mb-2" id="cantidad-unidades" name="cantidad-unidades">
-                            <input type="text" class="mb-2" id="fecha" name="fecha">
-                            <input type="text" class="mb-2" id="asignatira" name="asignatira">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary"><i class="fa fa-level-down"></i>Insertar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <!-- Modal Mostrar Libro -->
-    <div class="modal" tabindex="-1" id="modal8">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalBasicLabel">Mostrar Libro</h5>
-              <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="asignatura" class="d-block mb-3">Asignatura</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="mb-2" id="asignatura" name="asignatura">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i>Mostrar</button>
-            </div>
-          </div>
-        </div>
-    </div>
-
-    <!-- Modal Ordenar Libro -->
-    <div class="modal" tabindex="-1" id="modal9">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalBasicLabel">Ordenar Libro</h5>
-              <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="asignatura" class="d-block mb-3">Asignatura</label>
-                            <label for="ordenar-por" class="d-block mb-3">Odenar por</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="mb-2" id="asignatura" name="asignatura">
-                            <input type="text" class="mb-2" id="ordenar-por" name="ordenar-por">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary"><i class="fa fa-sort-amount-asc"></i>Ordenar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <!-- Modal Solicitar Libro -->
-    <div class="modal" tabindex="-1" id="modal10">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalBasicLabel">Solicitar Libro</h5>
-              <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="usuario" class="d-block mb-3">Usuario</label>
-                            <label for="ano-escolar" class="d-block mb-3">Año escolar</label>
-                            <label for="nombre-libro" class="d-block mb-3">Nombre del libro</label>
-                            <label for="fecha" class="d-block mb-3">Fecha</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="mb-2" id="usuario" name="usuario">
-                            <input type="number" max="5" min="1" class="mb-2" id="ano-escolar" name="ano-escolar">
-                            <input type="text" class="mb-2" id="nombre-libro" name="nombre-libro">
-                            <input type="date" class="mb-2" id="fecha" name="fecha">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary"><i class="fa fa-paperclip"></i>Solicitar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <!-- Modal Insertar Modulo -->
-    <div class="modal" tabindex="-1" id="modal11">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalBasicLabel">Insertar Modulo</h5>
-              <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="tipo" class="d-block mb-3">Tipo</label>
-                            <label for="ano-escolar" class="d-block mb-3">Año escolar</label>
-                            <label for="fecha" class="d-block mb-3">Fecha</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="mb-2" id="tipo" name="tipo">
-                            <input type="number" max="5" min="1" class="mb-2" id="ano-escolar" name="ano-escolar">
-                            <input type="date" class="mb-2" id="fecha" name="fecha">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary"><i class="fa fa-level-down"></i>Insertar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <!-- Modal Mostrar Modulo -->
-    <div class="modal" tabindex="-1" id="modal12">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalBasicLabel">Mostrar Modulo</h5>
-              <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="cantidad-unidades" class="d-block mb-3">Cantidad de unidades</label>
-                            <label for="ano-o-ocupacion" class="d-block mb-3">Año escolar o Ocupación</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="number" max="" min="1" class="mb-2" id="cantidad-unidades" name="cantidad-unidades">
-                            <select name="ano-o-ocupacion" id="ano-o-ocupacion">
-                                <option value="0">1ro</option>
-                                <option value="1">2do</option>
-                                <option value="2">3ro</option>
-                                <option value="3">4to</option>
-                                <option value="4">5to</option>
-                                <option value="5">Trabajador</option>
-                                <option value="6">Profesor</option>
-                            </select>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i>Mostrar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <!-- Modal Ordenar Modulo -->
-    <div class="modal" tabindex="-1" id="modal13">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalBasicLabel">Ordenar Modulo</h5>
-              <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="tipo" class="d-block mb-3">Tipo</label>
-                            <label for="ano-o-ocupacion" class="d-block mb-3">Año escolar o Ocupación</label>
-                            <label for="ordenar-por" class="d-block mb-3">Ordenar por</label>
-                            <label for="fecha" class="d-block mb-3">Fecha</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="mb-2" id="tipo" name="tipo">
-                            <select name="ano-o-ocupacion" id="ano-o-ocupacion" class="d-block mb-3">
-                                <option value="0">1ro</option>
-                                <option value="1">2do</option>
-                                <option value="2">3ro</option>
-                                <option value="3">4to</option>
-                                <option value="4">5to</option>
-                                <option value="5">Trabajador</option>
-                                <option value="6">Profesor</option>
-                            </select>
-                            <select name="ordenar-por" id="ordenar-por" class="d-block mb-2">
-                                <option value="0">Año</option>
-                                <option value="1">Tematica</option>
-                            </select>
-                            <input type="date" class="mb-2" id="fecha" name="fecha">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary"><i class="fa fa-sort-amount-asc"></i>Ordenar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <!-- Modal Solicitar Modulo -->
-    <div class="modal" tabindex="-1" id="modal14">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalBasicLabel">Solicitar Modulo</h5>
-              <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="tipo" class="d-block mb-3">Tipo</label>
-                            <label for="ano-o-ocupacion" class="d-block mb-3">Año escolar o Ocupación</label>
-                            <label for="fecha" class="d-block mb-3">Fecha</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="mb-2" id="tipo" name="tipo">
-                            <select name="ano-o-ocupacion" id="ano-o-ocupacion" class="d-block mb-3">
-                                <option value="0">1ro</option>
-                                <option value="1">2do</option>
-                                <option value="2">3ro</option>
-                                <option value="3">4to</option>
-                                <option value="4">5to</option>
-                                <option value="5">Trabajador</option>
-                                <option value="6">Profesor</option>
-                            </select>
-                            <input type="date" class="mb-2" id="fecha" name="fecha">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary"><i class="fa fa-paperclip"></i>Solicitar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <!-- Modal Eliminar Modulo -->
-    <div class="modal" tabindex="-1" id="modal15">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalBasicLabel">Eliminar Modulo</h5>
-              <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="tipo" class="d-block mb-3">Tipo</label>
-                            <label for="cantidad-unidades" class="d-block mb-3">Cantidad de unidades</label>
-                            <label for="fecha" class="d-block mb-3">Fecha</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="mb-2" id="tipo" name="tipo">
-                            <input type="number" max="" min="1" class="mb-2" id="cantidad-unidades" name="cantidad-unidades">
-                            <input type="date" class="mb-2" id="fecha" name="fecha">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary"><i class="fa fa-remove"></i>Eliminar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <!-- Modal Modificar Modulo -->
-    <div class="modal" tabindex="-1" id="modal16">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalBasicLabel">Modificar Modulo</h5>
-              <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="tipo" class="d-block mb-3">Tipo</label>
-                            <label for="fecha" class="d-block mb-3">Fecha</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="mb-2" id="tipo" name="tipo">
-                            <input type="date" class="mb-2" id="fecha" name="fecha">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i>Modificar</button>
-            </div>
-          </div>
-        </div>
-      </div>
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
 </body>
+
+    <!-- Modal Buscar Usuario -->
+    <div class="modal" tabindex="-1" id="modal1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBasicLabel">Buscar Usuario</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="">
+                  <div class="row">
+                      <div class="col-6">
+                          <label for="usauario" class="d-block mb-3">Usuario</label>
+                          <label for="nombre" class="d-block mb-3">Nombre</label>
+                          <label for="apellido" class="d-block mb-3">Apellido</label>
+                          <label for="ocupacion" class="d-block mb-3">Ocupación Laboral</label>
+                      </div>
+                      <div class="col-6">
+                          <input type="text" class="mb-2" id="usuario" name="usuario">
+                          <input type="text" class="mb-2" id="nombre" name="nombre">
+                          <input type="text" class="mb-2" id="apellido" name="apellido">
+                          <input type="text" class="mb-2" id="ocupacion" name="ocupacion">
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><i class="fa fa-search"></i>Buscar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Insertar Usuario -->
+  <div class="modal" tabindex="-1" id="modal2">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBasicLabel">Insertar Usuario</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="">
+                  <div class="row">
+                      <div class="col-6">
+                          <label for="usauario" class="d-block mb-3">Usuario</label>
+                          <label for="contraseña" class="d-block mb-3">Contraseña</label>
+                          <label for="nombre" class="d-block mb-3">Nombre</label>
+                          <label for="apellido" class="d-block mb-3">Apellido</label>
+                          <label for="rol" class="d-block mb-3">Rol o Permiso</label>
+                      </div>
+                      <div class="col-6">
+                          <input type="text" class="mb-2" id="usuario" name="usuario">
+                          <input type="password" class="mb-2" id="contraseña" name="contraseña">
+                          <input type="text" class="mb-2" id="nombre" name="nombre">
+                          <input type="text" class="mb-2" id="apellido" name="apellido">
+                          <input type="text" class="mb-2" id="rol" name="rol">
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><i class="fa fa-level-down"></i>Incertar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Eliminar Usuario -->
+  <div class="modal" tabindex="-1" id="modal3">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBasicLabel">Eliminar Usuario</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="">
+                  <div class="row">
+                      <div class="col-6">
+                          <label for="usauario" class="d-block mb-3">Usuario</label>
+                          <label for="contraseña" class="d-block mb-3">Contraseña</label>
+                      </div>
+                      <div class="col-6">
+                          <input type="text" class="mb-2" id="usuario" name="usuario">
+                          <input type="password" class="mb-2" id="contraseña" name="contraseña">
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><i class="fa fa-remove"></i>Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Ordenar Usuario -->
+  <div class="modal" tabindex="-1" id="modal4">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBasicLabel">Ordenar Usuario</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="">
+                  <div class="row">
+                      <div class="col-6">
+                          <label for="usauario" class="d-block mb-3">Usuario</label>
+                          <label for="nombre" class="d-block mb-3">Nombre</label>
+                          <label for="apellido" class="d-block mb-3">Apellido</label>
+                          <label for="rol" class="d-block mb-3">Grupo o Ocupacion laboral</label>
+                      </div>
+                      <div class="col-6">
+                          <input type="text" class="mb-2" id="usuario" name="usuario">
+                          <input type="text" class="mb-2" id="nombre" name="nombre">
+                          <input type="text" class="mb-2" id="apellido" name="apellido">
+                          <input type="text" class="mb-2" id="grupo-o-ocupacion" name="grupo-o-ocupacion">
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><i class="fa fa-sort-amount-asc"></i>Ordenar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Modificar Usuario -->
+  <div class="modal" tabindex="-1" id="modal5">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBasicLabel">Modificar Usuario</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="">
+                  <div class="row">
+                      <div class="col-6">
+                          <label for="usauario" class="d-block mb-3">Usuario</label>
+                          <label for="contraseña" class="d-block mb-3">Contraseña</label>
+                      </div>
+                      <div class="col-6">
+                          <input type="text" class="mb-2" id="usuario" name="usuario">
+                          <input type="password" class="mb-2" id="contraseña" name="contraseña">
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i>Modificar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Insertar Libro -->
+  <div class="modal" tabindex="-1" id="modal7">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBasicLabel">Insertar Libro</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="">
+                  <div class="row">
+                      <div class="col-6">
+                          <label for="cantidad-unidades" class="d-block mb-3">Cantidad de Unidades</label>
+                          <label for="fecha" class="d-block mb-3">Fecha</label>
+                          <label for="asignatira" class="d-block mb-3">Asignatura</label>
+                      </div>
+                      <div class="col-6">
+                          <input type="text" class="mb-2" id="cantidad-unidades" name="cantidad-unidades">
+                          <input type="text" class="mb-2" id="fecha" name="fecha">
+                          <input type="text" class="mb-2" id="asignatira" name="asignatira">
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><i class="fa fa-level-down"></i>Insertar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Mostrar Libro -->
+  <div class="modal" tabindex="-1" id="modal8">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBasicLabel">Mostrar Libro</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="">
+                  <div class="row">
+                      <div class="col-6">
+                          <label for="asignatura" class="d-block mb-3">Asignatura</label>
+                      </div>
+                      <div class="col-6">
+                          <input type="text" class="mb-2" id="asignatura" name="asignatura">
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i>Mostrar</button>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- Modal Ordenar Libro -->
+  <div class="modal" tabindex="-1" id="modal9">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBasicLabel">Ordenar Libro</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="">
+                  <div class="row">
+                      <div class="col-6">
+                          <label for="asignatura" class="d-block mb-3">Asignatura</label>
+                          <label for="ordenar-por" class="d-block mb-3">Odenar por</label>
+                      </div>
+                      <div class="col-6">
+                          <input type="text" class="mb-2" id="asignatura" name="asignatura">
+                          <input type="text" class="mb-2" id="ordenar-por" name="ordenar-por">
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><i class="fa fa-sort-amount-asc"></i>Ordenar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Solicitar Libro -->
+  <div class="modal" tabindex="-1" id="modal10">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBasicLabel">Solicitar Libro</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="">
+                  <div class="row">
+                      <div class="col-6">
+                          <label for="usuario" class="d-block mb-3">Usuario</label>
+                          <label for="ano-escolar" class="d-block mb-3">Año escolar</label>
+                          <label for="nombre-libro" class="d-block mb-3">Nombre del libro</label>
+                          <label for="fecha" class="d-block mb-3">Fecha</label>
+                      </div>
+                      <div class="col-6">
+                          <input type="text" class="mb-2" id="usuario" name="usuario">
+                          <input type="number" max="5" min="1" class="mb-2" id="ano-escolar" name="ano-escolar">
+                          <input type="text" class="mb-2" id="nombre-libro" name="nombre-libro">
+                          <input type="date" class="mb-2" id="fecha" name="fecha">
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><i class="fa fa-paperclip"></i>Solicitar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Insertar Modulo -->
+  <div class="modal" tabindex="-1" id="modal11">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBasicLabel">Insertar Modulo</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="">
+                  <div class="row">
+                      <div class="col-6">
+                          <label for="tipo" class="d-block mb-3">Tipo</label>
+                          <label for="ano-escolar" class="d-block mb-3">Año escolar</label>
+                          <label for="fecha" class="d-block mb-3">Fecha</label>
+                      </div>
+                      <div class="col-6">
+                          <input type="text" class="mb-2" id="tipo" name="tipo">
+                          <input type="number" max="5" min="1" class="mb-2" id="ano-escolar" name="ano-escolar">
+                          <input type="date" class="mb-2" id="fecha" name="fecha">
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><i class="fa fa-level-down"></i>Insertar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Mostrar Modulo -->
+  <div class="modal" tabindex="-1" id="modal12">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBasicLabel">Mostrar Modulo</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="">
+                  <div class="row">
+                      <div class="col-6">
+                          <label for="cantidad-unidades" class="d-block mb-3">Cantidad de unidades</label>
+                          <label for="ano-o-ocupacion" class="d-block mb-3">Año escolar o Ocupación</label>
+                      </div>
+                      <div class="col-6">
+                          <input type="number" max="" min="1" class="mb-2" id="cantidad-unidades" name="cantidad-unidades">
+                          <select name="ano-o-ocupacion" id="ano-o-ocupacion">
+                              <option value="0">1ro</option>
+                              <option value="1">2do</option>
+                              <option value="2">3ro</option>
+                              <option value="3">4to</option>
+                              <option value="4">5to</option>
+                              <option value="5">Trabajador</option>
+                              <option value="6">Profesor</option>
+                          </select>
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i>Mostrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Ordenar Modulo -->
+  <div class="modal" tabindex="-1" id="modal13">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBasicLabel">Ordenar Modulo</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="">
+                  <div class="row">
+                      <div class="col-6">
+                          <label for="tipo" class="d-block mb-3">Tipo</label>
+                          <label for="ano-o-ocupacion" class="d-block mb-3">Año escolar o Ocupación</label>
+                          <label for="ordenar-por" class="d-block mb-3">Ordenar por</label>
+                          <label for="fecha" class="d-block mb-3">Fecha</label>
+                      </div>
+                      <div class="col-6">
+                          <input type="text" class="mb-2" id="tipo" name="tipo">
+                          <select name="ano-o-ocupacion" id="ano-o-ocupacion" class="d-block mb-3">
+                              <option value="0">1ro</option>
+                              <option value="1">2do</option>
+                              <option value="2">3ro</option>
+                              <option value="3">4to</option>
+                              <option value="4">5to</option>
+                              <option value="5">Trabajador</option>
+                              <option value="6">Profesor</option>
+                          </select>
+                          <select name="ordenar-por" id="ordenar-por" class="d-block mb-2">
+                              <option value="0">Año</option>
+                              <option value="1">Tematica</option>
+                          </select>
+                          <input type="date" class="mb-2" id="fecha" name="fecha">
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><i class="fa fa-sort-amount-asc"></i>Ordenar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Solicitar Modulo -->
+  <div class="modal" tabindex="-1" id="modal14">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBasicLabel">Solicitar Modulo</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="">
+                  <div class="row">
+                      <div class="col-6">
+                          <label for="tipo" class="d-block mb-3">Tipo</label>
+                          <label for="ano-o-ocupacion" class="d-block mb-3">Año escolar o Ocupación</label>
+                          <label for="fecha" class="d-block mb-3">Fecha</label>
+                      </div>
+                      <div class="col-6">
+                          <input type="text" class="mb-2" id="tipo" name="tipo">
+                          <select name="ano-o-ocupacion" id="ano-o-ocupacion" class="d-block mb-3">
+                              <option value="0">1ro</option>
+                              <option value="1">2do</option>
+                              <option value="2">3ro</option>
+                              <option value="3">4to</option>
+                              <option value="4">5to</option>
+                              <option value="5">Trabajador</option>
+                              <option value="6">Profesor</option>
+                          </select>
+                          <input type="date" class="mb-2" id="fecha" name="fecha">
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><i class="fa fa-paperclip"></i>Solicitar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Eliminar Modulo -->
+  <div class="modal" tabindex="-1" id="modal15">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBasicLabel">Eliminar Modulo</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="">
+                  <div class="row">
+                      <div class="col-6">
+                          <label for="tipo" class="d-block mb-3">Tipo</label>
+                          <label for="cantidad-unidades" class="d-block mb-3">Cantidad de unidades</label>
+                          <label for="fecha" class="d-block mb-3">Fecha</label>
+                      </div>
+                      <div class="col-6">
+                          <input type="text" class="mb-2" id="tipo" name="tipo">
+                          <input type="number" max="" min="1" class="mb-2" id="cantidad-unidades" name="cantidad-unidades">
+                          <input type="date" class="mb-2" id="fecha" name="fecha">
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><i class="fa fa-remove"></i>Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Modificar Modulo -->
+  <div class="modal" tabindex="-1" id="modal16">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBasicLabel">Modificar Modulo</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="">
+                  <div class="row">
+                      <div class="col-6">
+                          <label for="tipo" class="d-block mb-3">Tipo</label>
+                          <label for="fecha" class="d-block mb-3">Fecha</label>
+                      </div>
+                      <div class="col-6">
+                          <input type="text" class="mb-2" id="tipo" name="tipo">
+                          <input type="date" class="mb-2" id="fecha" name="fecha">
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i>Modificar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </html>
 
 

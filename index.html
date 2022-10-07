@@ -13,34 +13,40 @@
     <title>El Estante</title>
 </head>
 <body id="pag-autenticacion">
-
-    <div class="">
-        <h1 class="mt-4 mt-sm-5 mb-2 mb-sm-4">El Estante</h1>
-        <h4 class="text-muted mb-sm-5">Sistema de Gestion de Escorpiones</h4>
-    </div>
-
-    <div class="row">
-        <div class="col-12 col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <form action="">
-                        <div class="input-group input-group-sm pb-3">
-                            <span class="input-group-text" id="input-group-sm-example">Usuario</span>
-                            <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-                        </div>
-                        <div class="input-group input-group-sm pb-3">
-                            <span class="input-group-text" id="input-group-sm-example">Contraseña</span>
-                            <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-                        </div>
-                        <input class="btn btn-primary" type="submit" value="Autenticar">
-                    </form>
+    <div class="container d-flex flex-column justify-content-center">
+        <div class="">
+            <h1 class="mt-5 mt-sm-5 mb-2 mb-sm-4 text-primary">El Estante</h1>
+            <h4 class="text-muted mb-4 mb-sm-5">Sistema de Gestion de Escorpiones</h4>
+        </div>
+    
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <div class="card mt-sm-5">
+                    <div class="card-body">
+                        <form action="">
+                            <div class="input-group input-group-sm pb-3">
+                                <span class="input-group-text" id="input-group-sm-example">Usuario</span>
+                                <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
+                            </div>
+                            <div class="input-group input-group-sm pb-3">
+                                <span class="input-group-text" id="input-group-sm-example">Contraseña</span>
+                                <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
+                            </div>
+                            <!-- <input class="btn btn-primary" type="submit" value="Autenticar"> -->
+                            <a href="home.html" class="btn btn-primary">Autenticar</a>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-12 col-sm-5 offset-1">
-            <img class="img-libros mt-4 w-75" src="img/ImagenLibros.jpg" alt="imagen libros">
+    
+            <div class="col-12 col-sm-5 offset-sm-1">
+                <img class="img-libros mt-4 w-75" src="img/ImagenLibros.jpg" alt="imagen libros">
+            </div>
         </div>
     </div>
+
+
+
 
             <!-- Modal Autenticar Usuario
             <div class="modal" tabindex="-1" id="modal6">
