@@ -163,6 +163,11 @@ html {
 /************************
 // Estilos para desktop
 ************************/
+@media screen and (min-Width: 330px) {
+  #pag-home #Gestionar-Usuarios::after,
+  #pag-home #Gestionar-Modulos::after,
+  #pag-home #Gestionar-Libros::after {
+    padding: 4rem; } }
 @media screen and (min-Width: 576px) {
   #pag-home .card {
     -webkit-box-flex: 0;
@@ -194,6 +199,7 @@ html {
     content: "Gestionar Libros";
     height: 45vh;
     font-size: 3rem;
+    padding: 1rem;
     transform: translateY(100%);
     -webkit-transform: translateY(100%);
     -moz-transform: translateY(100%);
