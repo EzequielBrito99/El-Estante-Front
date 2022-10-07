@@ -168,7 +168,8 @@ html {
   #pag-home #Gestionar-Modulos::after,
   #pag-home #Gestionar-Libros::after {
     padding-left: 10rem;
-    padding-right: 10rem; } }
+    padding-right: 10rem;
+    font-size: 1.8rem; } }
 @media screen and (min-Width: 576px) {
   #pag-home .card {
     -webkit-box-flex: 0;
