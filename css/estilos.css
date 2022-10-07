@@ -12,13 +12,17 @@ html {
 .container {
   height: 95vh; }
 
+/*********************
+// Estilos pagina Home
+*********************/
 #pag-home .card {
   height: 25vh;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
-  -o-border-radius: 10px; }
+  -o-border-radius: 10px;
+  position: relative; }
 
 #pag-home .container {
   margin-top: 5vh; }
@@ -167,8 +171,8 @@ html {
   #pag-home #Gestionar-Usuarios::after,
   #pag-home #Gestionar-Modulos::after,
   #pag-home #Gestionar-Libros::after {
-    padding-left: 10rem;
-    padding-right: 10rem;
+    padding-left: 27%;
+    padding-right: 27%;
     font-size: 1.8rem; } }
 @media screen and (min-Width: 576px) {
   #pag-home .card {
