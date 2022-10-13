@@ -2,6 +2,16 @@ html{
     font-size: 15px;
 }
 
+/*estilos de iconos*/
+.fa{
+    color: white;
+    font-size: 1rem;
+    margin-right: .5rem;
+}
+.fa-pencil{
+    cursor: pointer;
+}
+
 // Estilos Pagina de autenticacion
 #pag-autenticacion{
     // background-image: url("../img/Fondo-El-Estante-Autenticar.jpg");
@@ -47,11 +57,12 @@ html{
     overflow: hidden;
 }
 #pag-home #Gestionar-Usuarios::after{
-    content: "Gestionar Usuarios";
+    content: "Usuarios";
     font-size: 2rem;
     background-color: rgba(0, 0, 0, .3);
     position: absolute;
     height: 25vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,11 +94,12 @@ html{
     overflow: hidden;
 }
 #pag-home #Gestionar-Modulos::after{
-    content: "Gestionar Modulos";
+    content: "Modulos";
     font-size: 2rem;
     background-color: rgba(0, 0, 0, .3);
     position: absolute;
     height: 25vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -119,11 +131,12 @@ html{
     overflow: hidden;
 }
 #pag-home #Gestionar-Libros::after{
-    content: "Gestionar Libros";
+    content: "Libros";
     font-size: 2rem;
     background-color: rgba(0, 0, 0, .3);
     position: absolute;
     height: 25vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -148,12 +161,42 @@ html{
     -o-transform: translateY(0);
 }
 
-
-.fa{
-    color: white;
-    font-size: 1rem;
-    margin-right: .5rem;
+/**************************
+// Estilos Pagina Usuarios
+**************************/
+#pag-usuarios{
+    header{
+        height: 40vh;
+        width: 100%;
+        background-image: url(../img/GestionarUsuariosImg.jpg);
+        background-size: cover;
+    }
 }
+
+/**************************
+// Estilos Pagina Modulos
+**************************/
+#pag-modulos{
+    header{
+        height: 40vh;
+        width: 100%;
+        background-image: url(../img/GestionarModulosImg.jpg);
+        background-size: cover;
+    }
+}
+
+/**************************
+// Estilos Pagina Modulos
+**************************/
+#pag-libros{
+    header{
+        height: 40vh;
+        width: 100%;
+        background-image: url(../img/GestionarLibrosImg.jpg);
+        background-size: cover;
+    }
+}
+
 
 /************************
 // Estilos para desktop
@@ -177,7 +220,7 @@ html{
         }
 
         #pag-home #Gestionar-Usuarios::after{
-            content: "Gestionar Usuarios";
+            content: "Usuarios";
             height: 45vh;
             transform: translateY(100%);
             -webkit-transform: translateY(100%);
@@ -188,7 +231,7 @@ html{
         }
 
         #pag-home #Gestionar-Modulos::after{
-            content: "Gestionar Modulos";
+            content: "Modulos";
             height: 45vh;
             transform: translateY(100%);
             -webkit-transform: translateY(100%);
@@ -199,7 +242,7 @@ html{
         }
 
         #pag-home #Gestionar-Libros::after{
-            content: "Gestionar Libros";
+            content: "Libros";
             height: 45vh;
             padding: 1rem;
             transform: translateY(100%);
@@ -208,6 +251,17 @@ html{
             -ms-transform: translateY(100%);
             -o-transform: translateY(100%);
             padding: 0;
+        }
+
+        
+        #pag-usuarios, #pag-modulos, #pag-libros{
+            header{
+                height: 90vh; 
+                
+                .btn{
+                    font-size: 1.3rem;
+                }
+            }
         }
 }
 

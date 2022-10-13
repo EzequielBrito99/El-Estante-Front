@@ -1,6 +1,15 @@
 html {
   font-size: 15px; }
 
+/*estilos de iconos*/
+.fa {
+  color: white;
+  font-size: 1rem;
+  margin-right: .5rem; }
+
+.fa-pencil {
+  cursor: pointer; }
+
 #pag-autenticacion {
   width: 80%;
   margin: 0 auto;
@@ -34,11 +43,12 @@ html {
   overflow: hidden; }
 
 #pag-home #Gestionar-Usuarios::after {
-  content: "Gestionar Usuarios";
+  content: "Usuarios";
   font-size: 2rem;
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   height: 25vh;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -78,11 +88,12 @@ html {
   overflow: hidden; }
 
 #pag-home #Gestionar-Modulos::after {
-  content: "Gestionar Modulos";
+  content: "Modulos";
   font-size: 2rem;
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   height: 25vh;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -122,11 +133,12 @@ html {
   overflow: hidden; }
 
 #pag-home #Gestionar-Libros::after {
-  content: "Gestionar Libros";
+  content: "Libros";
   font-size: 2rem;
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   height: 25vh;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -159,10 +171,32 @@ html {
   -ms-transform: translateY(0);
   -o-transform: translateY(0); }
 
-.fa {
-  color: white;
-  font-size: 1rem;
-  margin-right: .5rem; }
+/**************************
+// Estilos Pagina Usuarios
+**************************/
+#pag-usuarios header {
+  height: 40vh;
+  width: 100%;
+  background-image: url(../img/GestionarUsuariosImg.jpg);
+  background-size: cover; }
+
+/**************************
+// Estilos Pagina Modulos
+**************************/
+#pag-modulos header {
+  height: 40vh;
+  width: 100%;
+  background-image: url(../img/GestionarModulosImg.jpg);
+  background-size: cover; }
+
+/**************************
+// Estilos Pagina Modulos
+**************************/
+#pag-libros header {
+  height: 40vh;
+  width: 100%;
+  background-image: url(../img/GestionarLibrosImg.jpg);
+  background-size: cover; }
 
 /************************
 // Estilos para desktop
@@ -182,7 +216,7 @@ html {
     height: 45vh; }
 
   #pag-home #Gestionar-Usuarios::after {
-    content: "Gestionar Usuarios";
+    content: "Usuarios";
     height: 45vh;
     transform: translateY(100%);
     -webkit-transform: translateY(100%);
@@ -192,7 +226,7 @@ html {
     padding: 0; }
 
   #pag-home #Gestionar-Modulos::after {
-    content: "Gestionar Modulos";
+    content: "Modulos";
     height: 45vh;
     transform: translateY(100%);
     -webkit-transform: translateY(100%);
@@ -202,7 +236,7 @@ html {
     padding: 0; }
 
   #pag-home #Gestionar-Libros::after {
-    content: "Gestionar Libros";
+    content: "Libros";
     height: 45vh;
     padding: 1rem;
     transform: translateY(100%);
@@ -210,7 +244,12 @@ html {
     -moz-transform: translateY(100%);
     -ms-transform: translateY(100%);
     -o-transform: translateY(100%);
-    padding: 0; } }
+    padding: 0; }
+
+  #pag-usuarios header, #pag-modulos header, #pag-libros header {
+    height: 90vh; }
+    #pag-usuarios header .btn, #pag-modulos header .btn, #pag-libros header .btn {
+      font-size: 1.3rem; } }
 @media screen and (min-Width: 992px) {
   #pag-home #Gestionar-Usuarios::after,
   #pag-home #Gestionar-Modulos::after,
