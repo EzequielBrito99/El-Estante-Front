@@ -38,7 +38,7 @@
 
       <div class="col-12 col-sm-5 offset-sm-1 d-flex flex-column justify-content-center">
         <section>
-          <div class="container-fluid w-auto d-flex">
+          <!-- <div class="container-fluid w-auto d-flex">
             <div class="form-floating w-100 my-2 shadow-sm">
               <select class="form-select" name="filtro" id="floatingSelect" aria-label="Floating label select example">
                 <option selected>Nombre</option>
@@ -47,7 +47,7 @@
               </select>
               <label for="floatingSelect">Filtrar por:</label>
             </div>
-          </div>
+          </div> -->
           
           <table class="table table-hover table-bordered text-center">
             <thead class="table-primary">
@@ -87,133 +87,133 @@
         </section>
       </div>
     </div>
+
+        <!-- Modal Buscar Usuario -->
+        <div class="modal" tabindex="-1" id="modal-buscar-usuario">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalBasicLabel">Buscar Usuario</h5>
+                <!-- <button onclick="ocultarModal('#modal-buscar-usuario')" type="button" class="btn-close" aria-label="Close"></button> -->
+              </div>
+              <div class="modal-body">
+                  <form action="">
+                      <div class="input-group input-group-sm pb-3">
+                        <span class="input-group-text" id="input-group-sm-example">Usuario</span>
+                        <input name="usuario" type="text" class="form-control input-BU" aria-label="Small input group" aria-describedby="input-group-sm">
+                    </div>
+                      <div class="input-group input-group-sm pb-3">
+                        <span class="input-group-text" id="input-group-sm-example">Nombre</span>
+                        <input name="nombre" type="text" class="form-control input-BU" aria-label="Small input group" aria-describedby="input-group-sm">
+                    </div>
+                      <div class="input-group input-group-sm pb-3">
+                        <span class="input-group-text" id="input-group-sm-example">Apellidos</span>
+                        <input name="apellidos" type="text" class="form-control input-BU" aria-label="Small input group" aria-describedby="input-group-sm">
+                    </div>
+                      <div class="input-group input-group-sm pb-3">
+                        <span class="input-group-text" id="input-group-sm-example">Rol</span>
+                        <input name="rol" type="text" class="form-control input-BU" aria-label="Small input group" aria-describedby="input-group-sm">
+                    </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                <button onclick="validar('input-BU')" type="button" class="btn btn-primary"><i class="fa fa-search"></i>Buscar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Modal Insertar Usuario -->
+      <div  class="modal" tabindex="-1" id="modal-insertar-usuario">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalBasicLabel">Insertar Usuario</h5>
+                <!-- <button id="cerrarInsertarUsuario" onclick="ocultarModal('#modal-inseretar-usuario')" type="button" class="btn-close" aria-label="Close" data-dismiss="modal-insertar-usuario"></button> -->
+              </div>
+              <div class="modal-body">
+                <form action="">
+                    <div class="input-group input-group-sm pb-3">
+                      <span class="input-group-text" id="input-group-sm-example">Usuario</span>
+                      <input type="text" name="usuario" class="form-control input-IU" aria-label="Small input group" aria-describedby="input-group-sm">
+                  </div>
+                  <div class="input-group input-group-sm pb-3">
+                      <span class="input-group-text" id="input-group-sm-example">Nombre</span>
+                      <input type="text" name="nombre" class="form-control input-IU" aria-label="Small input group" aria-describedby="input-group-sm">
+                  </div>
+                    <div class="input-group input-group-sm pb-3">
+                      <span class="input-group-text" id="input-group-sm-example">Apellidos</span>
+                      <input type="text" name="apellidos" class="form-control input-IU" aria-label="Small input group" aria-describedby="input-group-sm">
+                  </div>
+                    <div class="input-group input-group-sm pb-3">
+                      <span class="input-group-text" id="input-group-sm-example">Rol</span>
+                      <input type="text" name="rol" class="form-control input-IU" aria-label="Small input group" aria-describedby="input-group-sm">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button onclick="validar('input-IU')" type="button" class="btn btn-primary"><i class="fa fa-level-down"></i>Incertar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Modal Eliminar Usuario -->
+      <div class="modal" tabindex="-1" id="modal-eliminar-usuario">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalBasicLabel">Eliminar Usuario</h5>
+                <!-- <button type="button" class="btn-close" aria-label="Close" data-dismiss="modal"></button> -->
+              </div>
+              <div class="modal-body">
+                  <form action="">
+                      <div class="input-group input-group-sm pb-3">
+                        <span class="input-group-text" id="input-group-sm-example">Usuario</span>
+                        <input name="usuario" type="text" class="form-control input-EU" aria-label="Small input group" aria-describedby="input-group-sm">
+                    </div>
+                      <div class="input-group input-group-sm pb-3">
+                        <span class="input-group-text" id="input-group-sm-example">Contraseña</span>
+                        <input name="pass" type="text" class="form-control input-EU" aria-label="Small input group" aria-describedby="input-group-sm">
+                    </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                <button onclick="validar('input-EU')" type="button" class="btn btn-primary"><i class="fa fa-remove"></i>Eliminar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      <!-- Modal Modificar Usuario -->
+      <div class="modal" tabindex="-1" id="modal-modificar-usuario">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalBasicLabel">Modificar Usuario</h5>
+                <!-- <button type="button" class="btn-close" aria-label="Close"></button> -->
+              </div>
+              <div class="modal-body">
+                  <form action="">
+                      <div class="input-group input-group-sm pb-3">
+                        <span class="input-group-text" id="input-group-sm-example">Usuario</span>
+                        <input name="usuario" type="text" class="form-control input-MU" aria-label="Small input group" aria-describedby="input-group-sm">
+                    </div>
+                      <div class="input-group input-group-sm pb-3">
+                        <span class="input-group-text" id="input-group-sm-example">Contraseña</span>
+                        <input name="pass" type="text" class="form-control input-MU" aria-label="Small input group" aria-describedby="input-group-sm">
+                    </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                <button onclick="validar('input-MU')" type="button" class="btn btn-primary"><i class="fa fa-pencil"></i>Modificar</button>
+              </div>
+            </div>
+          </div>
+        </div>
     
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/validaciones.js"></script>
 </body>
-
-    <!-- Modal Buscar Usuario -->
-    <div class="modal" tabindex="-1" id="modal-buscar-usuario">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalBasicLabel">Buscar Usuario</h5>
-            <button type="button" class="btn-close" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <form action="">
-                  <div class="input-group input-group-sm pb-3">
-                    <span class="input-group-text" id="input-group-sm-example">Usuario</span>
-                    <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-                </div>
-                  <div class="input-group input-group-sm pb-3">
-                    <span class="input-group-text" id="input-group-sm-example">Nombre</span>
-                    <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-                </div>
-                  <div class="input-group input-group-sm pb-3">
-                    <span class="input-group-text" id="input-group-sm-example">Apellidos</span>
-                    <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-                </div>
-                  <div class="input-group input-group-sm pb-3">
-                    <span class="input-group-text" id="input-group-sm-example">Ocupacion</span>
-                    <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-                </div>
-              </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary"><i class="fa fa-search"></i>Buscar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal Insertar Usuario -->
-  <div class="modal" tabindex="-1" id="modal-insertar-usuario">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalBasicLabel">Insertar Usuario</h5>
-            <button type="button" class="btn-close" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form action="">
-              <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Usuario</span>
-                <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-            </div>
-            <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Nombre</span>
-                <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-            </div>
-              <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Apellido</span>
-                <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-            </div>
-              <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Rol</span>
-                <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-            </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary"><i class="fa fa-level-down"></i>Incertar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal Eliminar Usuario -->
-  <div class="modal" tabindex="-1" id="modal-eliminar-usuario">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalBasicLabel">Eliminar Usuario</h5>
-            <button type="button" class="btn-close" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <form action="">
-                  <div class="input-group input-group-sm pb-3">
-                    <span class="input-group-text" id="input-group-sm-example">Usuario</span>
-                    <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-                </div>
-                  <div class="input-group input-group-sm pb-3">
-                    <span class="input-group-text" id="input-group-sm-example">Contraseña</span>
-                    <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-                </div>
-              </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary"><i class="fa fa-remove"></i>Eliminar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <!-- Modal Modificar Usuario -->
-  <div class="modal" tabindex="-1" id="modal-modificar-usuario">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalBasicLabel">Modificar Usuario</h5>
-            <button type="button" class="btn-close" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <form action="">
-                  <div class="input-group input-group-sm pb-3">
-                    <span class="input-group-text" id="input-group-sm-example">Usuario</span>
-                    <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-                </div>
-                  <div class="input-group input-group-sm pb-3">
-                    <span class="input-group-text" id="input-group-sm-example">Contraseña</span>
-                    <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
-                </div>
-              </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i>Modificar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
- 
+</html> 

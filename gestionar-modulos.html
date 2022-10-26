@@ -39,7 +39,7 @@
 
       <div class="col-12 col-sm-5 offset-sm-1 d-flex flex-column justify-content-center">
         <section>
-          <div class="container-fluid w-auto d-flex">
+          <!-- <div class="container-fluid w-auto d-flex">
             <div class="form-floating w-100 my-2 shadow-sm">
               <select class="form-select" name="filtro" id="floatingSelect" aria-label="Floating label select example">
                 <option selected>Tipo</option>
@@ -48,7 +48,7 @@
               </select>
               <label for="floatingSelect">Filtrar por:</label>
             </div>
-          </div>
+          </div> -->
           
           <table class="table table-hover table-bordered text-center">
             <thead class="table-primary">
@@ -88,210 +88,165 @@
         </section>
       </div>
     </div>
-    
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-3.6.0.min.js"></script>
-</body>
 
-   <!-- Modal Insertar Modulo -->
+       <!-- Modal Insertar Modulo -->
   <div class="modal" tabindex="-1" id="modal-insertar-modulo">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalBasicLabel">Insertar Modulo</h5>
-            <button type="button" class="btn-close" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <form action="">
-                  <div class="row">
-                      <div class="col-6">
-                          <label for="tipo" class="d-block mb-3">Tipo</label>
-                          <label for="ano-escolar" class="d-block mb-3">Año escolar</label>
-                          <label for="fecha" class="d-block mb-3">Fecha</label>
-                      </div>
-                      <div class="col-6">
-                          <input type="text" class="mb-2" id="tipo" name="tipo">
-                          <input type="number" max="5" min="1" class="mb-2" id="ano-escolar" name="ano-escolar">
-                          <input type="date" class="mb-2" id="fecha" name="fecha">
-                      </div>
-                  </div>
-              </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary"><i class="fa fa-level-down"></i>Insertar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <!-- Modal Mostrar Modulo -->
-  <div class="modal" tabindex="-1" id="modal-mostrar-modulo">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalBasicLabel">Mostrar Modulo</h5>
-            <button type="button" class="btn-close" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <form action="">
-                  <div class="row">
-                      <div class="col-6">
-                          <label for="cantidad-unidades" class="d-block mb-3">Cantidad de unidades</label>
-                          <label for="ano-o-ocupacion" class="d-block mb-3">Año escolar o Ocupación</label>
-                      </div>
-                      <div class="col-6">
-                          <input type="number" max="" min="1" class="mb-2" id="cantidad-unidades" name="cantidad-unidades">
-                          <select name="ano-o-ocupacion" id="ano-o-ocupacion">
-                              <option value="0">1ro</option>
-                              <option value="1">2do</option>
-                              <option value="2">3ro</option>
-                              <option value="3">4to</option>
-                              <option value="4">5to</option>
-                              <option value="5">Trabajador</option>
-                              <option value="6">Profesor</option>
-                          </select>
-                      </div>
-                  </div>
-              </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i>Mostrar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <!-- Modal Solicitar Modulo -->
-  <div class="modal" tabindex="-1" id="modal-solicitar-modulo">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalBasicLabel">Solicitar Modulo</h5>
-            <button type="button" class="btn-close" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <form action="">
-                  <div class="row">
-                      <div class="col-6">
-                          <label for="tipo" class="d-block mb-3">Tipo</label>
-                          <label for="ano-o-ocupacion" class="d-block mb-3">Año escolar o Ocupación</label>
-                          <label for="fecha" class="d-block mb-3">Fecha</label>
-                      </div>
-                      <div class="col-6">
-                          <input type="text" class="mb-2" id="tipo" name="tipo">
-                          <select name="ano-o-ocupacion" id="ano-o-ocupacion" class="d-block mb-3">
-                              <option value="0">1ro</option>
-                              <option value="1">2do</option>
-                              <option value="2">3ro</option>
-                              <option value="3">4to</option>
-                              <option value="4">5to</option>
-                              <option value="5">Trabajador</option>
-                              <option value="6">Profesor</option>
-                          </select>
-                          <input type="date" class="mb-2" id="fecha" name="fecha">
-                      </div>
-                  </div>
-              </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary"><i class="fa fa-paperclip"></i>Solicitar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <!-- Modal Eliminar Modulo -->
-  <div class="modal" tabindex="-1" id="modal-eliminar-modulo">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalBasicLabel">Eliminar Modulo</h5>
-            <button type="button" class="btn-close" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <form action="">
-                  <div class="row">
-                      <div class="col-6">
-                          <label for="tipo" class="d-block mb-3">Tipo</label>
-                          <label for="cantidad-unidades" class="d-block mb-3">Cantidad de unidades</label>
-                          <label for="fecha" class="d-block mb-3">Fecha</label>
-                      </div>
-                      <div class="col-6">
-                          <input type="text" class="mb-2" id="tipo" name="tipo">
-                          <input type="number" max="" min="1" class="mb-2" id="cantidad-unidades" name="cantidad-unidades">
-                          <input type="date" class="mb-2" id="fecha" name="fecha">
-                      </div>
-                  </div>
-              </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary"><i class="fa fa-remove"></i>Eliminar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <!-- Modal Modificar Modulo -->
-  <div class="modal" tabindex="-1" id="modal-modificar-modulo">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalBasicLabel">Modificar Modulo</h5>
-            <button type="button" class="btn-close" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <form action="">
-                  <div class="row">
-                      <div class="col-6">
-                          <label for="tipo" class="d-block mb-3">Tipo</label>
-                          <label for="fecha" class="d-block mb-3">Fecha</label>
-                      </div>
-                      <div class="col-6">
-                          <input type="text" class="mb-2" id="tipo" name="tipo">
-                          <input type="date" class="mb-2" id="fecha" name="fecha">
-                      </div>
-                  </div>
-              </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i>Modificar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Plantilla del modal -->
-<div class="modal" tabindex="-1" id="">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalBasicLabel">Modal title</h5>
+          <h5 class="modal-title" id="modalBasicLabel">Insertar Modulo</h5>
           <button type="button" class="btn-close" aria-label="Close"></button>
         </div>
-        <div class="modal-body">...</div>
+        <div class="modal-body">
+            <form action="">
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Tipo</span>
+                <input name="tipo" type="text" class="form-control input-IM" aria-label="Small input group" aria-describedby="input-group-sm">
+            </div>
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Año</span>
+                <input name="año" type="number" min="1" max="5" class="form-control input-IM" aria-label="Small input group" aria-describedby="input-group-sm">
+            </div>
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Fecha</span>
+                <input name="fecha" type="date" class="form-control input-IM" required aria-label="Small input group" aria-describedby="input-group-sm">
+            </div>
+            </form>
+        </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button onclick="validar('input-IM')" class="btn btn-primary"><i class="fa fa-level-down"></i>Insertar</button>
         </div>
       </div>
     </div>
   </div>
+
+<!-- Modal Mostrar Modulo -->
+<div class="modal" tabindex="-1" id="modal-mostrar-modulo">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalBasicLabel">Mostrar Modulo</h5>
+          <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="">
+                <div class="input-group input-group-sm pb-3">
+                  <span class="input-group-text" id="input-group-sm-example">Tipo</span>
+                  <input name="tipo" type="text" class="form-control input-MM" aria-label="Small input group" aria-describedby="input-group-sm">
+                </div>
+                <div class="input-group input-group-sm pb-3">
+                  <span class="input-group-text" id="input-group-sm-example">Cantidad de unidades</span>
+                  <input name="cantUnid" type="number" min="1" class="form-control input-MM" aria-label="Small input group" aria-describedby="input-group-sm">
+                </div>
+                <div class="input-group input-group-sm pb-3">
+                  <span class="input-group-text" id="input-group-sm-example">Fecha</span>
+                  <input name="fecha" type="date" class="form-control input-MM" aria-label="Small input group" aria-describedby="input-group-sm">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button onclick="validar('input-MM')" type="button" class="btn btn-primary"><i class="fa fa-eye"></i>Mostrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal Solicitar Modulo -->
+<div class="modal" tabindex="-1" id="modal-solicitar-modulo">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalBasicLabel">Solicitar Modulo</h5>
+          <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="">
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Tipo</span>
+                <input name="tipo" type="text" class="form-control input-SM" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Fecha</span>
+                <input name="fecha" type="date" class="form-control input-SM" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+              <select name="ano-o-ocupacion" id="ano-o-ocupacion" class="d-block mb-3 input-SM">
+                  <option value="0">1ro</option>
+                  <option value="1">2do</option>
+                  <option value="2">3ro</option>
+                  <option value="3">4to</option>
+                  <option value="4">5to</option>
+                  <option value="5">Trabajador</option>
+                  <option value="6">Profesor</option>
+              </select>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button onclick="validar('input-SM')" type="button" class="btn btn-primary"><i class="fa fa-paperclip"></i>Solicitar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal Eliminar Modulo -->
+<div class="modal" tabindex="-1" id="modal-eliminar-modulo">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalBasicLabel">Eliminar Modulo</h5>
+          <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="">
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Tipo</span>
+                <input name="tipo" type="text" class="form-control input-EM" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Cantidad de unidades</span>
+                <input name="cantUnid" type="number" min="1" class="form-control input-EM" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Fecha</span>
+                <input name="fecha" type="date" class="form-control input-EM" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button onclick="validar('input-EM')" type="button" class="btn btn-primary"><i class="fa fa-remove"></i>Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal Modificar Modulo -->
+<div class="modal" tabindex="-1" id="modal-modificar-modulo">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalBasicLabel">Modificar Modulo</h5>
+          <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="">
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Tipo</span>
+                <input name="tipo" type="text" class="form-control input-MoM" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Fecha</span>
+                <input name="fecha" type="date" class="form-control input-MoM" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button onclick="validar('input-MoM')" type="button" class="btn btn-primary"><i class="fa fa-pencil"></i>Modificar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/validaciones.js"></script>
+</body>
+</html>
