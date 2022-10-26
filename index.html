@@ -23,17 +23,17 @@
             <div class="col-12 col-sm-6">
                 <div class="card mt-sm-5">
                     <div class="card-body">
-                        <form action="">
+                        <form id="formulario" action="home.html">
                             <div class="input-group input-group-sm pb-3">
                                 <span class="input-group-text" id="input-group-sm-example">Usuario</span>
-                                <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
+                                <input id="user" type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
                             </div>
                             <div class="input-group input-group-sm pb-3">
                                 <span class="input-group-text" id="input-group-sm-example">Contraseña</span>
-                                <input type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
+                                <input id="pass" type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
                             </div>
-                            <!-- <input class="btn btn-primary" type="submit" value="Autenticar"> -->
-                            <a href="home.html" class="btn btn-primary">Autenticar</a>
+                            <input onclick="autenticar()" class="btn btn-primary" type="submit" value="Autenticar">
+                            <!-- <button  onclick="validar()" class="btn btn-primary">Autenticar</button> -->
                         </form>
                     </div>
                 </div>
@@ -45,41 +45,8 @@
         </div>
     </div>
 
-
-
-
-            <!-- Modal Autenticar Usuario
-            <div class="modal" tabindex="-1" id="modal6">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalBasicLabel">Autenticar Usuario</h5>
-                        <button type="button" class="btn-close" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label for="usauario" class="d-block mb-3">Usuario</label>
-                                    <label for="contraseña" class="d-block mb-3">Contraseña</label>
-                                    <label for="rol" class="d-block mb-3">Rol o Permiso</label> -->
-                                <!-- </div>
-                                <div class="col-6">
-                                    <input type="text" class="mb-2" id="usuario" name="usuario">
-                                    <input type="password" class="mb-2" id="contraseña" name="contraseña"> -->
-                                    <!-- <input type="text" class="mb-2" id="rol" name="rol"> -->
-                                <!-- </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary"><i class="fa fa-key"></i>Autenticar</button>
-                    </div>
-                    </div>
-                 </div>
-            </div> -->
-
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/autenticar.js"></script>
 </body>
 </html>

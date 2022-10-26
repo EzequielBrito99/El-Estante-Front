@@ -38,7 +38,7 @@
 
       <div class="col-12 col-sm-5 offset-sm-1 d-flex flex-column justify-content-center">
         <section>
-          <div class="container-fluid w-auto d-flex">
+          <!-- <div class="container-fluid w-auto d-flex">
             <div class="form-floating w-100 my-2 shadow-sm">
               <select class="form-select" name="filtro" id="floatingSelect" aria-label="Floating label select example">
                 <option selected>Asignatura</option>
@@ -47,7 +47,7 @@
               </select>
               <label for="floatingSelect">Filtrar por:</label>
             </div>
-          </div>
+          </div> -->
           
           <table class="table table-hover table-bordered text-center">
             <thead class="table-primary">
@@ -87,123 +87,125 @@
         </section>
       </div>
     </div>
-    
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-3.6.0.min.js"></script>
-</body>
 
-
-
-  <!-- Modal Insertar Libro -->
+    <!-- Modal Insertar Libro -->
   <div class="modal" tabindex="-1" id="modal-insertar-libro">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalBasicLabel">Insertar Libro</h5>
-            <button type="button" class="btn-close" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <form action="">
-                  <div class="row">
-                      <div class="col-6">
-                          <label for="cantidad-unidades" class="d-block mb-3">Cantidad de Unidades</label>
-                          <label for="fecha" class="d-block mb-3">Fecha</label>
-                          <label for="asignatira" class="d-block mb-3">Asignatura</label>
-                      </div>
-                      <div class="col-6">
-                          <input type="text" class="mb-2" id="cantidad-unidades" name="cantidad-unidades">
-                          <input type="text" class="mb-2" id="fecha" name="fecha">
-                          <input type="text" class="mb-2" id="asignatira" name="asignatira">
-                      </div>
-                  </div>
-              </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary"><i class="fa fa-level-down"></i>Insertar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <!-- Modal Mostrar Libro -->
-  <div class="modal" tabindex="-1" id="modal-mostrar-libro">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalBasicLabel">Mostrar Libro</h5>
-            <button type="button" class="btn-close" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <form action="">
-                  <div class="row">
-                      <div class="col-6">
-                          <label for="asignatura" class="d-block mb-3">Asignatura</label>
-                      </div>
-                      <div class="col-6">
-                          <input type="text" class="mb-2" id="asignatura" name="asignatura">
-                      </div>
-                  </div>
-              </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i>Mostrar</button>
-          </div>
-        </div>
-      </div>
-  </div>
-
-  <!-- Modal Solicitar Libro -->
-  <div class="modal" tabindex="-1" id="modal-solicitar-libro">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalBasicLabel">Solicitar Libro</h5>
-            <button type="button" class="btn-close" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <form action="">
-                  <div class="row">
-                      <div class="col-6">
-                          <label for="usuario" class="d-block mb-3">Usuario</label>
-                          <label for="ano-escolar" class="d-block mb-3">Año escolar</label>
-                          <label for="nombre-libro" class="d-block mb-3">Nombre del libro</label>
-                          <label for="fecha" class="d-block mb-3">Fecha</label>
-                      </div>
-                      <div class="col-6">
-                          <input type="text" class="mb-2" id="usuario" name="usuario">
-                          <input type="number" max="5" min="1" class="mb-2" id="ano-escolar" name="ano-escolar">
-                          <input type="text" class="mb-2" id="nombre-libro" name="nombre-libro">
-                          <input type="date" class="mb-2" id="fecha" name="fecha">
-                      </div>
-                  </div>
-              </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary"><i class="fa fa-paperclip"></i>Solicitar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-</html>
-
-
-
-
-
-<!-- Plantilla del modal -->
-<div class="modal" tabindex="-1" id="">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalBasicLabel">Modal title</h5>
-          <button type="button" class="btn-close" aria-label="Close"></button>
+          <h5 class="modal-title" id="modalBasicLabel">Insertar Libro</h5>
+          <!-- <button type="button" class="btn-close" aria-label="Close"></button> -->
         </div>
-        <div class="modal-body">...</div>
+        <div class="modal-body">
+            <form action="">
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Cantidad de unidades</span>
+                <input name="cantUnid" type="number" min="1" class="form-control input-IL" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Fecha</span>
+                <input name="fecha" type="date" class="form-control input-IL" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Asignatura</span>
+                <input name="asignatura" type="text" class="form-control input-IL" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+            </form>
+        </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button onclick="validar('input-IL')" type="button" class="btn btn-primary"><i class="fa fa-level-down"></i>Insertar</button>
         </div>
       </div>
     </div>
   </div>
+
+<!-- Modal Mostrar Libro -->
+<div class="modal" tabindex="-1" id="modal-mostrar-libro">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalBasicLabel">Mostrar Libro</h5>
+          <!-- <button type="button" class="btn-close" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body">
+            <form action="">
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Asignatura</span>
+                <input name="asignatura" type="text" class="form-control input-ML" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button onclick="validar('input-ML')" type="button" class="btn btn-primary"><i class="fa fa-eye"></i>Mostrar</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Modal Solicitar Libro -->
+<div class="modal" tabindex="-1" id="modal-solicitar-libro">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalBasicLabel">Solicitar Libro</h5>
+          <!-- <button type="button" class="btn-close" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body">
+            <form action="">
+              <div class="input-group input-group-sm pb-3">
+                  <span class="input-group-text" id="input-group-sm-example">Usuario</span>
+                  <input name="usuario" type="text" class="form-control input-SL" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Año</span>
+                <input name="año" type="number" min="1" max="5" class="form-control input-SL" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Nombre del libro</span>
+                <input type="text" name="nombre-libro" class="form-control input-SL" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Fecha</span>
+                <input name="fecha" type="date" class="form-control input-SL" required aria-label="Small input group" aria-describedby="input-group-sm">
+             </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button  onclick="validar('input-SL')" type="button" class="btn btn-primary"><i class="fa fa-paperclip"></i>Solicitar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <!-- Modal Modificar Libro -->
+      <div class="modal" tabindex="-1" id="modal-modificar-libro">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalBasicLabel">Modificar Libro</h5>
+              <!-- <button type="button" class="btn-close" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body">
+                <form action="">
+                  <div class="input-group input-group-sm pb-3">
+                    <span class="input-group-text" id="input-group-sm-example">Asignatura</span>
+                    <input name="asignatura" type="text" class="form-control input-MoL" aria-label="Small input group" aria-describedby="input-group-sm">
+                  </div>
+                  <div class="input-group input-group-sm pb-3">
+                    <span class="input-group-text" id="input-group-sm-example">Fecha</span>
+                    <input name="fecha" type="date" class="form-control input-MoL" aria-label="Small input group" aria-describedby="input-group-sm">
+                  </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button onclick="validar('input-MoL')" type="button" class="btn btn-primary"><i class="fa fa-pencil"></i>Modificar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/validaciones.js"></script>
+</body>
+</html>
