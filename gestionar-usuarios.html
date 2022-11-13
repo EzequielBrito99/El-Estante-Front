@@ -9,13 +9,15 @@
     <!-- cargando estilos -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
+ 
 
     <title>El Estante</title>
 </head>
 <body id="pag-usuarios">
 
     <div class="row mt-sm-5">
-      <div class="col-12 col-sm-5">
+      <div class="col-12 col-sm-3">
         <header class="d-flex justify-content-center align-items-end align-items-sm-center shadow-sm">
           <nav class="navbar navbar-light bg-light fixed-top px-sm-5">
             <div class="container-fluid">
@@ -36,7 +38,7 @@
         </header>
       </div>
 
-      <div class="col-12 col-sm-5 offset-sm-1 d-flex flex-column justify-content-center">
+      <div class="col-12 col-sm-7 offset-sm-1 d-flex flex-column justify-content-center">
         <section>
           <!-- <div class="container-fluid w-auto d-flex">
             <div class="form-floating w-100 my-2 shadow-sm">
@@ -49,7 +51,7 @@
             </div>
           </div> -->
           
-          <table class="table table-hover table-bordered text-center">
+          <table id="tabla" class="table table-hover table-bordered text-center">
             <thead class="table-primary">
               <tr>
                 <th scope="col">Nombre</th>
@@ -214,6 +216,12 @@
     
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/datatables.min.js"></script>
     <script src="js/validaciones.js"></script>
+    <script type="text/javascript">
+      $(document).ready( function () {
+        $('#tabla').DataTable();
+      } );
+    </script>
 </body>
 </html> 
