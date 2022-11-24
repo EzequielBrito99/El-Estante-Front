@@ -12,19 +12,20 @@
 
     <title>El Estante</title>
 </head>
-<body id="pag-autenticacion">
+<body id="pag-autenticacion" class="bg-opacity-10 bg-secondary">
     <div class="container d-flex flex-column justify-content-center">
         <div class="">
             <h1 class="mt-5 mt-sm-5 mb-2 mb-sm-4 text-primary">El Estante</h1>
-            <h4 class="text-muted mb-4 mb-sm-5">Sistema de Gestion de Escorpiones</h4>
+            <h4 class="text-muted mb-4 mb-sm-5">Sistema de Gestión de la entrega de módulos y bibliografía docente.</h4>
         </div>
     
         <div class="row">
-            <div class="col-12 col-sm-6">
-                <div class="card mt-sm-5">
+            <div class="col-12 col-sm-4 offset-sm-1">
+                <div class="card mt-3 mt-sm-5 shadow-lg">
                     <div class="card-body">
                         <form id="formulario" action="home.html">
-                            <div class="input-group input-group-sm pb-3">
+                            <i class="fa fa-user fs-1 text-white bg-primary p-4 ratio-1x1"></i>
+                            <div class="input-group input-group-sm pb-3 mt-5">
                                 <span class="input-group-text" id="input-group-sm-example">Usuario</span>
                                 <input id="user" type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
                             </div>
@@ -32,20 +33,20 @@
                                 <span class="input-group-text" id="input-group-sm-example">Contraseña</span>
                                 <input id="pass" type="text" class="form-control" aria-label="Small input group" aria-describedby="input-group-sm">
                             </div>
-                            <input class="btn btn-primary" type="submit" value="Autenticar">
+                            <input class="btn btn-primary mt-sm-4" type="submit" value="Autenticar">
                         </form>
                     </div>
                 </div>
             </div>
     
             <div class="col-12 col-sm-5 offset-sm-1">
-                <img class="img-libros mt-4 w-75" src="img/ImagenLibros.jpg" alt="imagen libros">
+                <img class="img-libros mt-4 w-75" src="img/ImgAuth.png" alt="imagen libros">
             </div>
         </div>
     </div>
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/autenticar.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

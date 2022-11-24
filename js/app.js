@@ -1,11 +1,11 @@
 const formulario = document.getElementById('formulario');
-const email = $('#user')[0].value;
-const password = $('#pass')[0].value;
 const host = "http://192.168.137.1:8000";
-const authUrl = host + "/api/auth/login/"
+const authUrl = host + "/api/auth/login/";
 
 formulario.addEventListener('submit', (e)=>{
     e.preventDefault();
+    const email = $('#user')[0].value;
+    const password = $('#pass')[0].value;
     $.ajax({
         type:"POST",
         url:authUrl,
@@ -22,9 +22,12 @@ formulario.addEventListener('submit', (e)=>{
         error:function(xhr,ajaxOption,Error){
             if(xhr.status==400){
                 alert("Usuario y contraseña incorrectos");
-            }else if(xhr.status==404){
+            }else{
                 alert("Server caido");
             }
         }
     });
 });
+
+
+

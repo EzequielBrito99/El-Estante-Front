@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- cargando estilos -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
     <link rel="stylesheet" href="css/estilos.css">
 
     <title>El Estante</title>
@@ -30,8 +31,8 @@
           </nav>
           <div class="d-sm-flex flex-sm-column">
             <button class="btn btn-primary btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-insertar-libro">Insertar</button>
-            <button class="btn btn-success btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-solicitar-libro">Solicitar</button>
-            <button class="btn btn-secondary btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-mostrar-libro">Mostrar</button>
+            <!-- <button class="btn btn-success btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-solicitar-libro">Solicitar</button> -->
+            <!-- <button class="btn btn-secondary btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-mostrar-libro">Mostrar</button> -->
           </div>
         </header>
       </div>
@@ -49,34 +50,31 @@
             </div>
           </div> -->
           
-          <table class="table table-hover table-bordered text-center">
+          <table id="tabla" class="table table-hover table-bordered text-center">
             <thead class="table-primary">
               <tr>
                 <th scope="col">Asignatura</th>
-                <th scope="col">Fecha</th>
                 <th scope="col">Unidades</th>
-                <th scope="col">Editar</th>
+                <th scope="col">Asignar</th>
+                <th scope="col">Eliminar</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
+            <tbody id="tabla-tbody">
+              <!-- <tr class="c-pointer" data-bs-toggle="modal" data-bs-target="#modal-modificar-libro">
                 <td>Calculo II</td>
                 <td>5/10</td>
                 <td>670</td>
-                <td><i class="fa fa-pencil fs-6 text-black-50" data-bs-toggle="modal" data-bs-target="#modal-modificar-libro"></i></td>
               </tr>
-              <tr>
+              <tr class="c-pointer" data-bs-toggle="modal" data-bs-target="#modal-modificar-libro">
                 <td>ISW I</td>
                 <td>2/6</td>
                 <td>458</td>
-                <td><i class="fa fa-pencil fs-6 text-black-50" data-bs-toggle="modal" data-bs-target="#modal-modificar-libro"></i></td>
               </tr>
-              <tr>
+              <tr class="c-pointer" data-bs-toggle="modal" data-bs-target="#modal-modificar-libro">
                 <td>Programacion</td>
                 <td>8/12</td>
                 <td>720</td>
-                <td><i class="fa fa-pencil fs-6 text-black-50" data-bs-toggle="modal" data-bs-target="#modal-modificar-libro"></i></td>
-              </tr>
+              </tr> -->
             </tbody>
             <tfoot class="table-primary">
               <tr>
@@ -99,21 +97,41 @@
         <div class="modal-body">
             <form action="">
               <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Cantidad de unidades</span>
-                <input name="cantUnid" type="number" min="1" class="form-control input-IL" aria-label="Small input group" aria-describedby="input-group-sm">
-              </div>
-              <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Fecha</span>
-                <input name="fecha" type="date" class="form-control input-IL" aria-label="Small input group" aria-describedby="input-group-sm">
-              </div>
-              <div class="input-group input-group-sm pb-3">
                 <span class="input-group-text" id="input-group-sm-example">Asignatura</span>
-                <input name="asignatura" type="text" class="form-control input-IL" aria-label="Small input group" aria-describedby="input-group-sm">
+                <input id="asignatura" name="asignatura" type="text" class="form-control input-IL" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Cantidad de unidades</span>
+                <input id="cantUnid" name="cantUnid" type="number" min="1" class="form-control input-IL" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+              <div class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Año</span>
+                <input id="anno" name="año" type="number" min="1" max="5" class="form-control input-IL" aria-label="Small input group" aria-describedby="input-group-sm">
               </div>
             </form>
         </div>
         <div class="modal-footer">
-          <button onclick="validar('input-IL')" type="button" class="btn btn-primary"><i class="fa fa-level-down"></i>Insertar</button>
+          <button onclick="insertarLibros()" type="button" class="btn btn-primary"><i class="fa fa-level-down"></i>Insertar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal Eliminar Libro -->
+  <div class="modal" tabindex="-1" id="modal-eliminar-libro">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalBasicLabel">Eliminar Libro</h5>
+          <!-- <button type="button" class="btn-close" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body">
+            <form action="">
+              <h6>Esta seguro que desea eliminar el libro?</h6>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button id="btn-delete" type="button" class="btn btn-primary"><i class="fa fa-close"></i>Eliminar</button>
         </div>
       </div>
     </div>
@@ -142,36 +160,22 @@
     </div>
 </div>
 
-<!-- Modal Solicitar Libro -->
+<!-- Modal Asignar Libro -->
 <div class="modal" tabindex="-1" id="modal-solicitar-libro">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalBasicLabel">Solicitar Libro</h5>
+          <h5 class="modal-title" id="modalBasicLabel">Asignar Libro</h5>
           <!-- <button type="button" class="btn-close" aria-label="Close"></button> -->
         </div>
         <div class="modal-body">
             <form action="">
-              <div class="input-group input-group-sm pb-3">
-                  <span class="input-group-text" id="input-group-sm-example">Usuario</span>
-                  <input name="usuario" type="text" class="form-control input-SL" aria-label="Small input group" aria-describedby="input-group-sm">
-              </div>
-              <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Año</span>
-                <input name="año" type="number" min="1" max="5" class="form-control input-SL" aria-label="Small input group" aria-describedby="input-group-sm">
-              </div>
-              <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Nombre del libro</span>
-                <input type="text" name="nombre-libro" class="form-control input-SL" aria-label="Small input group" aria-describedby="input-group-sm">
-              </div>
-              <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Fecha</span>
-                <input name="fecha" type="date" class="form-control input-SL" required aria-label="Small input group" aria-describedby="input-group-sm">
-             </div>
+              <input list="user-AL" type="text">
+              <datalist name="usuario-AL" id="user-AL"></datalist>
             </form>
         </div>
         <div class="modal-footer">
-          <button  onclick="validar('input-SL')" type="button" class="btn btn-primary"><i class="fa fa-paperclip"></i>Solicitar</button>
+          <button  onclick="validar('input-SL')" type="button" class="btn btn-primary"><i class="fa fa-paperclip"></i>Asignar</button>
         </div>
       </div>
     </div>
@@ -189,16 +193,20 @@
                 <form action="">
                   <div class="input-group input-group-sm pb-3">
                     <span class="input-group-text" id="input-group-sm-example">Asignatura</span>
-                    <input name="asignatura" type="text" class="form-control input-MoL" aria-label="Small input group" aria-describedby="input-group-sm">
+                    <input id="asignatura-MoL" name="asignatura" type="text" class="form-control input-MoL" aria-label="Small input group" aria-describedby="input-group-sm">
                   </div>
                   <div class="input-group input-group-sm pb-3">
-                    <span class="input-group-text" id="input-group-sm-example">Fecha</span>
-                    <input name="fecha" type="date" class="form-control input-MoL" aria-label="Small input group" aria-describedby="input-group-sm">
+                    <span class="input-group-text" id="input-group-sm-example">Cantidad de unidades</span>
+                    <input id="cantUnid-MoL" name="cantUnid" type="number" min="1" class="form-control input-MoL" aria-label="Small input group" aria-describedby="input-group-sm">
+                  </div>
+                  <div class="input-group input-group-sm pb-3">
+                    <span class="input-group-text" id="input-group-sm-example">Año</span>
+                    <input id="anno-MoL" name="anno" type="number" min="1" max="5" class="form-control input-MoL" aria-label="Small input group" aria-describedby="input-group-sm">
                   </div>
                 </form>
             </div>
             <div class="modal-footer">
-              <button onclick="validar('input-MoL')" type="button" class="btn btn-primary"><i class="fa fa-pencil"></i>Modificar</button>
+              <button id="btn-update" onclick="validar()" type="button" class="btn btn-primary"><i class="fa fa-pencil"></i>Modificar</button>
             </div>
           </div>
         </div>
@@ -206,6 +214,13 @@
     
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/libros.js"></script>
     <script src="js/validaciones.js"></script>
+    <script type="text/javascript" src="js/dataTables.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready( function () {
+        $('#tabla').DataTable();
+      } );
+    </script>
 </body>
 </html>

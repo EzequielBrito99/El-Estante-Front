@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- cargando estilos -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
+    <link rel="stylesheet" href="css/estilos.css">
  
 
     <title>El Estante</title>
@@ -31,58 +31,49 @@
             </div>
           </nav>
           <div class="d-sm-flex flex-sm-column">
-            <button class="btn btn-primary btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-insertar-usuario">Insertar</button>
-            <button class="btn btn-danger btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-eliminar-usuario">Eliminar</button>
-            <button class="btn btn-secondary btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-buscar-usuario">Buscar</button>
+            <button id="btn-insertar" class="btn btn-primary btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-insertar-usuario">Insertar</button>
+            <!-- <button id="btn-eliminar" class="btn btn-danger btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-eliminar-usuario">Eliminar</button> -->
+            <!-- <button id="btn-insertar" class="btn btn-secondary btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-buscar-usuario">Buscar</button> -->
           </div>
         </header>
       </div>
 
       <div class="col-12 col-sm-7 offset-sm-1 d-flex flex-column justify-content-center">
         <section>
-          <!-- <div class="container-fluid w-auto d-flex">
-            <div class="form-floating w-100 my-2 shadow-sm">
-              <select class="form-select" name="filtro" id="floatingSelect" aria-label="Floating label select example">
-                <option selected>Nombre</option>
-                <option value="1">Apellidos</option>
-                <option value="2">Rol</option>
-              </select>
-              <label for="floatingSelect">Filtrar por:</label>
-            </div>
-          </div> -->
           
           <table id="tabla" class="table table-hover table-bordered text-center">
             <thead class="table-primary">
               <tr>
+                <th scope="col">Usuario</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Rol</th>
-                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
+            <tbody id="tabla-tbody">
+              <!-- <tr class="c-pointer" data-bs-toggle="modal" data-bs-target="#modal-modificar-usuario">
+                <td>Usuario</td>
                 <td>Ezequiel</td>
                 <td>Brito</td>
                 <td>Estudiante</td>
-                <td><i class="fa fa-pencil fs-6 text-black-50" data-bs-toggle="modal" data-bs-target="#modal-modificar-usuario"></i></td>
               </tr>
-              <tr>
+              <tr class="c-pointer" data-bs-toggle="modal" data-bs-target="#modal-modificar-usuario">
+                <td>fghdfbhd</td>
                 <td>Guillermo</td>
                 <td>Rodriguez</td>
                 <td>Estudiante</td>
-                <td><i class="fa fa-pencil fs-6 text-black-50" data-bs-toggle="modal" data-bs-target="#modal-modificar-usuario"></i></td>
               </tr>
-              <tr>
+              <tr class="c-pointer" data-bs-toggle="modal" data-bs-target="#modal-modificar-usuario">
+                <td>dhdghd</td>
                 <td>Adela</td>
                 <td>Perez</td>
                 <td>Secretaria</td>
-                <td><i class="fa fa-pencil fs-6 text-black-50" data-bs-toggle="modal" data-bs-target="#modal-modificar-usuario"></i></td>
-              </tr>
+              </tr > -->
             </tbody>
             <tfoot class="table-primary">
               <tr>
-                <td colspan="4"></td>
+                <td colspan="5"></td>
               </tr>
             </tfoot>
           </table>
@@ -137,24 +128,36 @@
                 <form action="">
                     <div class="input-group input-group-sm pb-3">
                       <span class="input-group-text" id="input-group-sm-example">Usuario</span>
-                      <input type="text" name="usuario" class="form-control input-IU" aria-label="Small input group" aria-describedby="input-group-sm">
+                      <input id="user" type="text" name="usuario" class="form-control input-IU" aria-label="Small input group" aria-describedby="input-group-sm">
                   </div>
                   <div class="input-group input-group-sm pb-3">
                       <span class="input-group-text" id="input-group-sm-example">Nombre</span>
-                      <input type="text" name="nombre" class="form-control input-IU" aria-label="Small input group" aria-describedby="input-group-sm">
+                      <input id="nombre" type="text" name="nombre" class="form-control input-IU" aria-label="Small input group" aria-describedby="input-group-sm">
                   </div>
                     <div class="input-group input-group-sm pb-3">
                       <span class="input-group-text" id="input-group-sm-example">Apellidos</span>
-                      <input type="text" name="apellidos" class="form-control input-IU" aria-label="Small input group" aria-describedby="input-group-sm">
+                      <input id="apellidos" type="text" name="apellidos" class="form-control input-IU" aria-label="Small input group" aria-describedby="input-group-sm">
+                  </div>
+                  <div class="input-group input-group-sm pb-3">
+                    <span class="input-group-text" id="input-group-sm-example">Constraseña</span>
+                    <input id="pass" type="text" name="pass" class="form-control input-IU" aria-label="Small input group" aria-describedby="input-group-sm">
+                  </div>
+                  <div class="input-group input-group-sm pb-3">
+                      <span class="input-group-text" id="input-group-sm-example">Confirm-Contraseña</span>
+                      <input id="confirm-pass" type="text" name="confirm-pass" class="form-control input-IU" aria-label="Small input group" aria-describedby="input-group-sm">
                   </div>
                     <div class="input-group input-group-sm pb-3">
+                      <span class="input-group-text" id="input-group-sm-example">Email</span>
+                      <input id="email" type="email" name="email" class="form-control input-IU" aria-label="Small input group" aria-describedby="input-group-sm">
+                    </div>
+                    <div class="input-group input-group-sm pb-3">
                       <span class="input-group-text" id="input-group-sm-example">Rol</span>
-                      <input type="text" name="rol" class="form-control input-IU" aria-label="Small input group" aria-describedby="input-group-sm">
+                      <input id="rol" type="text" name="rol" class="form-control input-IU" aria-label="Small input group" aria-describedby="input-group-sm">
                   </div>
                 </form>
               </div>
               <div class="modal-footer">
-                <button onclick="validar('input-IU')" type="button" class="btn btn-primary"><i class="fa fa-level-down"></i>Incertar</button>
+                <button onclick="insertarUsuarios()" type="button" class="btn btn-primary"><i class="fa fa-level-down"></i>Insertar</button>
               </div>
             </div>
           </div>
@@ -169,19 +172,10 @@
                 <!-- <button type="button" class="btn-close" aria-label="Close" data-dismiss="modal"></button> -->
               </div>
               <div class="modal-body">
-                  <form action="">
-                      <div class="input-group input-group-sm pb-3">
-                        <span class="input-group-text" id="input-group-sm-example">Usuario</span>
-                        <input name="usuario" type="text" class="form-control input-EU" aria-label="Small input group" aria-describedby="input-group-sm">
-                    </div>
-                      <div class="input-group input-group-sm pb-3">
-                        <span class="input-group-text" id="input-group-sm-example">Contraseña</span>
-                        <input name="pass" type="text" class="form-control input-EU" aria-label="Small input group" aria-describedby="input-group-sm">
-                    </div>
-                  </form>
+                  <h6>Esta seguro que desea eliminar el usuario?</h6>
               </div>
               <div class="modal-footer">
-                <button onclick="validar('input-EU')" type="button" class="btn btn-primary"><i class="fa fa-remove"></i>Eliminar</button>
+                <button id="btn-delete" type="button" class="btn btn-primary"><i class="fa fa-remove"></i>Eliminar</button>
               </div>
             </div>
           </div>
@@ -199,16 +193,28 @@
                   <form action="">
                       <div class="input-group input-group-sm pb-3">
                         <span class="input-group-text" id="input-group-sm-example">Usuario</span>
-                        <input name="usuario" type="text" class="form-control input-MU" aria-label="Small input group" aria-describedby="input-group-sm">
+                        <input id="user-MoU" name="usuario" type="text" class="form-control input-MU" aria-label="Small input group" aria-describedby="input-group-sm">
                     </div>
                       <div class="input-group input-group-sm pb-3">
-                        <span class="input-group-text" id="input-group-sm-example">Contraseña</span>
-                        <input name="pass" type="text" class="form-control input-MU" aria-label="Small input group" aria-describedby="input-group-sm">
+                        <span class="input-group-text" id="input-group-sm-example">Nombre</span>
+                        <input id="nombre-MoU" name="pass" type="text" class="form-control input-MU" aria-label="Small input group" aria-describedby="input-group-sm">
+                    </div>
+                      <div class="input-group input-group-sm pb-3">
+                        <span class="input-group-text" id="input-group-sm-example">Apellidos</span>
+                        <input id="apellidos-MoU" name="pass" type="text" class="form-control input-MU" aria-label="Small input group" aria-describedby="input-group-sm">
+                    </div>
+                      <div class="input-group input-group-sm pb-3">
+                        <span class="input-group-text" id="input-group-sm-example">email</span>
+                        <input id="email-MoU" name="pass" type="email" class="form-control input-MU" aria-label="Small input group" aria-describedby="input-group-sm">
+                    </div>
+                      <div class="input-group input-group-sm pb-3">
+                        <span class="input-group-text" id="input-group-sm-example">Rol</span>
+                        <input id="rol-MoU" name="pass" type="text" class="form-control input-MU" aria-label="Small input group" aria-describedby="input-group-sm">
                     </div>
                   </form>
               </div>
               <div class="modal-footer">
-                <button onclick="validar('input-MU')" type="button" class="btn btn-primary"><i class="fa fa-pencil"></i>Modificar</button>
+                <button id="btn-update" type="button" class="btn btn-primary"><i class="fa fa-pencil"></i>Modificar</button>
               </div>
             </div>
           </div>
@@ -216,12 +222,13 @@
     
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="js/datatables.min.js"></script>
-    <script src="js/validaciones.js"></script>
-    <script type="text/javascript">
+    <script src="js/validaciones.js"></script>    
+    <script type="text/javascript" src="js/dataTables.min.js"></script>
+    <script src="js/usuarios.js"></script>
+    <!-- <script type="text/javascript">
       $(document).ready( function () {
         $('#tabla').DataTable();
       } );
-    </script>
+    </script> -->
 </body>
 </html> 
