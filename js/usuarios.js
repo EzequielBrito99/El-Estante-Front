@@ -2,7 +2,7 @@
 const host = "http://192.168.137.1:8000";
 const tbody = document.getElementById('tabla-tbody');
 let id_ref = null;
-
+const token = localStorage.getItem('token');
 
 // Funcion para vaciar tabla
 function vaciarTabla(){
@@ -11,8 +11,12 @@ function vaciarTabla(){
 
 // Funcion para Listar Usuarios
 function listarUsuarios(){
-    const listarUser = host + '/api/auth/users/';
+    const buscar_usuarios = document.getElementById('buscar-usuarios').value;
+    const listarUser = host + `/api/auth/users/?username__icontains=${buscar_usuarios}`;
     $.ajax({
+        headers: {
+            'Authorization': `Token ${token}`
+        },
         type:"GET",
         url: listarUser,
         success:function(data){
@@ -84,15 +88,20 @@ function insertarUsuarios(){
     const last_name = $('#apellidos')[0].value;
     const email = $('#email')[0].value;
     const username = $('#user')[0].value;
-    const rol = $('#rol')[0].value;
+    const rol = $('#rol option:selected').html();
+    
     const insertarUser = host + '/api/auth/signup/';
 
     
     if(!validar('input-IU')){
         $.ajax({
+            headers: {
+                'Authorization': `Token ${token}`
+            },
             type:"POST",
             url: insertarUser,
             success:function(){
+                ocultarModal('modal-insertar-usuario');
                 vaciarTabla();
                 listarUsuarios();
             },
@@ -112,7 +121,6 @@ function insertarUsuarios(){
             }
         });
     }
-
 };
  
 
@@ -120,11 +128,15 @@ function insertarUsuarios(){
 function eliminarUsuarios(id){
     const eliminarUser = host + '/api/auth/users/'+id+'/';
     $.ajax({
+        headers: {
+                'Authorization': `Token ${token}`
+            },
         type:"DELETE",
         url: eliminarUser,
         success:function(){
             vaciarTabla();
             listarUsuarios();
+            ocultarModal('modal-eliminar-usuario');
         },
         error:function(xhr,ajaxOption,Error){
             if(xhr.status=="404"){
@@ -146,15 +158,19 @@ function modificarUsuarios(id){
     const first_name = $('#nombre-MoU')[0].value;
     const last_name = $('#apellidos-MoU')[0].value;
     const email = $('#email-MoU')[0].value;
-    const rol = $('#rol-MoU')[0].value;
+    const rol = $('#rol option:selected').html();
     const modifUser = host + '/api/auth/users/'+id+'/';
 
     $.ajax({
+        headers: {
+                'Authorization': `Token ${token}`
+            },
         type:"PATCH",
         url: modifUser,
         success:function(){
             vaciarTabla();
             listarUsuarios();
+            ocultarModal('modal-modificar-usuario');
         },
         data:{
             username,

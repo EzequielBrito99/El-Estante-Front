@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- cargando estilos -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/> -->
     <link rel="stylesheet" href="css/estilos.css">
 
     <title>El Estante</title>
@@ -17,69 +17,54 @@
 
     <div class="row mt-sm-5">
       <div class="col-12 col-sm-3">
-        <header class="d-flex justify-content-center align-items-end align-items-sm-center shadow-sm">
-          <nav class="navbar navbar-light bg-light fixed-top px-sm-5">
-            <div class="container-fluid">
-              <a class="navbar-brand text-primary" href="#">El Estante</a>
-              <div>
-                <div class="d-flex align-items-center">
-                  <i class="fa fa-user fs-5 text-primary"></i>
-                  <p class="d-inline mb-0 text-black-50">Admin</p>
+        <nav class="navbar navbar-light bg-light fixed-top px-sm-5">
+          <div class="container-fluid">
+            <a class="navbar-brand text-primary" href="#">El Estante</a>
+            <div>
+              <div class="d-flex align-items-center">
+                <i class="fa fa-user fs-5 text-primary"></i>
+                <p id="user-logged" class="d-inline mb-0 text-black-50"></p>
+                <div class="btn-group">
+                  <button type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                  <ul class="dropdown-menu dropdown-menu-end text-center">
+                    <li class=""><button class="btn btn-sm btn-outline-danger" onclick="cerrarSesion()">Cerrar sesión</button></li>
+                  </ul>                
                 </div>
               </div>
             </div>
-          </nav>
+          </div>
+        </nav>
+        <header class="d-flex justify-content-center align-items-end align-items-sm-center shadow-sm">
           <div class="d-sm-flex flex-sm-column">
             <button class="btn btn-primary btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-insertar-modulo">Insertar</button>
-            <!-- <button class="btn btn-danger btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-eliminar-modulo">Eliminar</button> -->
-            <button class="btn btn-success btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-solicitar-modulo">Solicitar</button>
-            <!-- <button class="btn btn-secondary btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-mostrar-modulo">Mostrar</button> -->
           </div>
         </header>
       </div>
 
       <div class="col-12 col-sm-7 offset-sm-1 d-flex flex-column justify-content-center">
-        <section>
-          <!-- <div class="container-fluid w-auto d-flex">
-            <div class="form-floating w-100 my-2 shadow-sm">
-              <select class="form-select" name="filtro" id="floatingSelect" aria-label="Floating label select example">
-                <option selected>Tipo</option>
-                <option value="1">Fecha</option>
-                <option value="2">Año escolar</option>
-              </select>
-              <label for="floatingSelect">Filtrar por:</label>
-            </div>
-          </div> -->
-          
+        <section>          
+
+          <div class="input-group input-group-sm pb-3 mt-3 px-2 px-sm-5">
+            <input id="buscar-modulos" placeholder="Filtrar por categoria" name="usuario" type="text" class="form-control input-BU" aria-label="Small input group" aria-describedby="input-group-sm">
+            <button onclick="listarModulos()" class="input-group-text btn btn-outline-primary" id="input-group-sm-example">Buscar</button>
+         </div>
+
           <table id="tabla" class="table table-hover table-bordered text-center">
             <thead class="table-primary">
               <tr>
-                <th scope="col">Material</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Año</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Materiales</th>
+                <th scope="col">Estudiantes</th>
+                <th scope="col">Asignar</th>
                 <th scope="col">Eliminar</th>
               </tr>
             </thead>
             <tbody id="tabla-tbody">
-              <!-- <tr class="c-pointer" data-bs-toggle="modal" data-bs-target="#modal-modificar-modulo">
-                <td>Libretas</td>
-                <td>5/10</td>
-                <td>2do</td>
-              </tr>
-              <tr class="c-pointer" data-bs-toggle="modal" data-bs-target="#modal-modificar-modulo">
-                <td>Lapices</td>
-                <td>2/6</td>
-                <td>4to</td>
-              </tr>
-              <tr class="c-pointer" data-bs-toggle="modal" data-bs-target="#modal-modificar-modulo">
-                <td>Cuadernos</td>
-                <td>8/12</td>
-                <td>1ro</td>
-              </tr> -->
+              <!-- body de la tabla -->
             </tbody>
             <tfoot class="table-primary">
               <tr>
-                <td colspan="4"></td>
+                <td colspan="5"></td>
               </tr>
             </tfoot>
           </table>
@@ -92,27 +77,27 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalBasicLabel">Insertar Modulo</h5>
-          <button type="button" class="btn-close" aria-label="Close"></button>
+          <h5 class="modal-title" id="modalBasicLabel">Insertar Módulo</h5>
+          <button type="button" class="btn-close" onclick="ocultarModal('modal-insertar-modulo')" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form action="">
+            <form id="form-IM" action="">
               <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Tipo</span>
-                <input name="tipo" type="text" class="form-control input-IM" aria-label="Small input group" aria-describedby="input-group-sm">
-            </div>
-              <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Año</span>
-                <input name="año" type="number" min="1" max="5" class="form-control input-IM" aria-label="Small input group" aria-describedby="input-group-sm">
-            </div>
-              <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Fecha</span>
-                <input name="fecha" type="date" class="form-control input-IM" required aria-label="Small input group" aria-describedby="input-group-sm">
-            </div>
+                <span class="input-group-text" id="input-group-sm-example">Categoria</span>
+                <input id="categoria-IM" name="categoria" type="text" class="form-control input-IM categoria-IM" aria-label="Small input group" aria-describedby="input-group-sm">
+              </div>
+              <button class="btn btn-sm btn-outline-secondary mb-3" onclick="addCampoMaterial('IM')">Añadir material</button>
+              <div id="material-0" class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Material</span>
+                <input name="material-IM" type="text" class="form-control input-IM material material-IM" aria-label="Small input group" aria-describedby="input-group-sm">
+                <span class="input-group-text" id="input-group-sm-example">Unidades</span>
+                <input name="cantUnid" type="number" min="1" class="form-control input-IM unidad unidad-IM" aria-label="Small input group" aria-describedby="input-group-sm">
+                <span class="input-group-text" id="input-group-sm-example"><i onclick="deleteCampoMaterial('material-0 IM')" class="fa fa-close icono-delete c-pointer"></i></span>
+              </div>
             </form>
         </div>
         <div class="modal-footer">
-          <button onclick="validar('input-IM')" class="btn btn-primary"><i class="fa fa-level-down"></i>Insertar</button>
+          <button onclick="insertarModulos()" class="btn btn-primary"><i class="fa fa-level-down"></i>Insertar</button>
         </div>
       </div>
     </div>
@@ -123,8 +108,8 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalBasicLabel">Mostrar Modulo</h5>
-          <button type="button" class="btn-close" aria-label="Close"></button>
+          <h5 class="modal-title" id="modalBasicLabel">Mostrar Módulo</h5>
+          <button type="button" class="btn-close" onclick="ocultarModal('modal-mostrar-modulo')" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <form action="">
@@ -149,68 +134,40 @@
     </div>
   </div>
 
-<!-- Modal Solicitar Modulo -->
+<!-- Modal Asignar Modulo -->
 <div class="modal" tabindex="-1" id="modal-solicitar-modulo">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalBasicLabel">Solicitar Modulo</h5>
-          <button type="button" class="btn-close" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form action="">
-              <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Tipo</span>
-                <input name="tipo" type="text" class="form-control input-SM" aria-label="Small input group" aria-describedby="input-group-sm">
-              </div>
-              <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Fecha</span>
-                <input name="fecha" type="date" class="form-control input-SM" aria-label="Small input group" aria-describedby="input-group-sm">
-              </div>
-              <select name="ano-o-ocupacion" id="ano-o-ocupacion" class="d-block mb-3 input-SM">
-                  <option value="0">1ro</option>
-                  <option value="1">2do</option>
-                  <option value="2">3ro</option>
-                  <option value="3">4to</option>
-                  <option value="4">5to</option>
-                  <option value="5">Trabajador</option>
-                  <option value="6">Profesor</option>
-              </select>
-            </form>
-        </div>
-        <div class="modal-footer">
-          <button onclick="validar('input-SM')" type="button" class="btn btn-primary"><i class="fa fa-paperclip"></i>Solicitar</button>
-        </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalBasicLabel">Asignar Módulo</h5>
+        <button type="button" class="btn-close" onclick="ocultarModal('modal-solicitar-modulo')" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form action="">
+            <input id="input-user-AM" list="user-AM" type="text">
+            <datalist name="usuario-AM" id="user-AM"></datalist>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-asignar" type="button" class="btn btn-primary"><i class="fa fa-paperclip"></i>Asignar</button>
       </div>
     </div>
   </div>
+</div>
 
 <!-- Modal Eliminar Modulo -->
 <div class="modal" tabindex="-1" id="modal-eliminar-modulo">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalBasicLabel">Eliminar Modulo</h5>
-          <button type="button" class="btn-close" aria-label="Close"></button>
+          <h5 class="modal-title" id="modalBasicLabel">Eliminar Módulo</h5>
+          <button type="button" class="btn-close" onclick="ocultarModal('modal-eliminar-modulo')" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form action="">
-              <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Tipo</span>
-                <input name="tipo" type="text" class="form-control input-EM" aria-label="Small input group" aria-describedby="input-group-sm">
-              </div>
-              <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Cantidad de unidades</span>
-                <input name="cantUnid" type="number" min="1" class="form-control input-EM" aria-label="Small input group" aria-describedby="input-group-sm">
-              </div>
-              <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Fecha</span>
-                <input name="fecha" type="date" class="form-control input-EM" aria-label="Small input group" aria-describedby="input-group-sm">
-              </div>
-            </form>
+          <h6>Esta seguro que desea eliminar el módulo?</h6>
         </div>
         <div class="modal-footer">
-          <button onclick="validar('input-EM')" type="button" class="btn btn-primary"><i class="fa fa-remove"></i>Eliminar</button>
+          <button id="btn-delete" type="button" class="btn btn-primary"><i class="fa fa-remove"></i>Eliminar</button>
         </div>
       </div>
     </div>
@@ -221,23 +178,27 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalBasicLabel">Modificar Modulo</h5>
-          <button type="button" class="btn-close" aria-label="Close"></button>
+          <h5 class="modal-title" id="modalBasicLabel">Modificar Módulo</h5>
+          <button type="button" class="btn-close" onclick="ocultarModal('modal-modificar-modulo')" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form action="">
+            <form id="form-MoM" action="">
               <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Tipo</span>
-                <input name="tipo" type="text" class="form-control input-MoM" aria-label="Small input group" aria-describedby="input-group-sm">
+                <span class="input-group-text" id="input-group-sm-example">Categoria</span>
+                <input id="categoria-MoM" name="categoria" type="text" class="form-control input-MoM" aria-label="Small input group" aria-describedby="input-group-sm">
               </div>
-              <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Fecha</span>
-                <input name="fecha" type="date" class="form-control input-MoM" aria-label="Small input group" aria-describedby="input-group-sm">
+              <button class="btn btn-sm btn-outline-secondary mb-3" onclick="addCampoMaterial('MoM')">Añadir material</button>
+              <div id="material-1" class="input-group input-group-sm pb-3">
+                <span class="input-group-text" id="input-group-sm-example">Material</span>
+                <input name="material" type="text" class="form-control input-MoM material material-MoM" aria-label="Small input group" aria-describedby="input-group-sm">
+                <span class="input-group-text" id="input-group-sm-example">Unidades</span>
+                <input name="cantUnid" type="number" min="1" class="form-control input-MoM unidad unidad-MoM" aria-label="Small input group" aria-describedby="input-group-sm">
+                <span class="input-group-text" id="input-group-sm-example"><i onclick="deleteCampoMaterial('material-1 MoM')" class="fa fa-close icono-delete c-pointer"></i></span>
               </div>
             </form>
         </div>
         <div class="modal-footer">
-          <button onclick="validar('input-MoM')" type="button" class="btn btn-primary"><i class="fa fa-pencil"></i>Modificar</button>
+          <button onclick="modificarModulos()" type="button" class="btn btn-primary"><i class="fa fa-pencil"></i>Modificar</button>
         </div>
       </div>
     </div>
@@ -246,7 +207,12 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/validaciones.js"></script>   
-    <script type="text/javascript" src="js/dataTables.min.js"></script> 
+    <script src="js/modulos.js"></script>   
+    <script src="js/app.js"></script>  
+    <script type="text/javascript">
+      userLogged();
+    </script> 
+    <!-- <script type="text/javascript" src="js/dataTables.min.js"></script>  -->
     <!-- <script type="text/javascript">
       $(document).ready( function () {
         $('#tabla').DataTable();

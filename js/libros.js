@@ -2,6 +2,7 @@
 const host = "http://192.168.137.1:8000";
 const tbody = document.getElementById('tabla-tbody');
 let id_ref = null;
+const token = localStorage.getItem('token');
 
 
 // Funcion para vaciar tabla
@@ -11,9 +12,13 @@ function vaciarTabla(){
 
 // Funcion para Listar Usuarios
 function listarLibros(){
-    const listarLibrosUrl = host + '/api/libros/';
+    const buscar_libros = document.getElementById('buscar-libros').value;
+    const listarLibrosUrl = host + `/api/libros/?asignatura__icontains=${buscar_libros}`;
     
     $.ajax({
+        headers: {
+            'Authorization': `Token ${token}`
+        },
         type:"GET",
         url: listarLibrosUrl,
         success:function(data){
@@ -21,8 +26,8 @@ function listarLibros(){
             data.map((e)=>{
                 const asignatura = e.asignatura;
                 const unidades = e.cantidad_unidades;
-                const icono_asignar = "<i class='fa fa-level-down icono-asignar'></i>"
-                const icono_delete = "<i class='fa fa-close icono-delete'></i>"
+                const icono_asignar = "<i class='fa fa-level-down icono-asignar'></i>";
+                const icono_delete = "<i class='fa fa-close icono-delete'></i>";
                 const id = e.id;
 
                 const td_asignatura = document.createElement('td');
@@ -45,6 +50,9 @@ function listarLibros(){
                 });
                 td_asignar.setAttribute( 'data-bs-toggle','modal');
                 td_asignar.setAttribute( 'data-bs-target','#modal-solicitar-libro');
+                td_asignar.addEventListener('click',()=>{
+                    id_ref = id;
+                });
 
                 const tr = document.createElement('tr');
                 tr.className+='c-pointer';
@@ -83,11 +91,15 @@ function insertarLibros(){
     
     if(!validar('input-IL')){
         $.ajax({
+            headers: {
+                'Authorization': `Token ${token}`
+            },
             type:"POST",
             url: insertarLibrosUrl,
             success:function(){
                 vaciarTabla();
                 listarLibros();
+                ocultarModal('modal-insertar-libro');
             },
             data: {
                 asignatura,
@@ -109,11 +121,15 @@ function insertarLibros(){
 function eliminarLibros(id){
     const eliminarLibrosUrl = host + '/api/libros/'+id+'/';
     $.ajax({
+        headers: {
+            'Authorization': `Token ${token}`
+        },
         type:"DELETE",
         url: eliminarLibrosUrl,
         success:function(){
             vaciarTabla();
             listarLibros();
+            ocultarModal('modal-eliminar-libro');
         },
         error:function(xhr,ajaxOption,Error){
             if(xhr.status=="404"){
@@ -129,7 +145,8 @@ btn_delete.addEventListener('click', ()=>{
 });
 
 
-// Funcion para modificar Usuario
+
+// Funcion para modificar Libro
 function modificarLibros(id){
     const asignatura = $('#asignatura-MoL')[0].value;
     const cantidad_unidades = $('#cantUnid-MoL')[0].value;
@@ -140,11 +157,15 @@ function modificarLibros(id){
 
     if(!validar('input-MoL')){
         $.ajax({
+            headers: {
+            'Authorization': `Token ${token}`
+        },
             type:"PATCH",
             url: modifLibrosUrl,
             success:function(){
                 vaciarTabla();
                 listarLibros();
+                ocultarModal('modal-modificar-libro');
             },
             data:{
                 asignatura,
@@ -162,6 +183,41 @@ function modificarLibros(id){
 
 };
 
+// Funcion para asignar Libro
+function asignarLibro(id){
+    const username = $('#input-user-AL')[0].value;
+    const modifLibrosUrl = host + '/api/libros/'+id+'/asignar/';
+
+    if(!validar('input-AL')){
+        $.ajax({
+            headers: {
+            'Authorization': `Token ${token}`
+        },
+            type:"POST",
+            url: modifLibrosUrl,
+            success:function(){
+                ocultarModal('modal-solicitar-libro');
+                alert('Asignacion satisfactoria.');
+            },
+            data:{
+                username
+            },
+            error:function(xhr,ajaxOption,Error){
+                if(xhr.status=="404"){
+                    alert('Server Caido');
+                }
+                console.log(xhr)
+            }
+        });
+    }
+
+};
+
+const btn_asignar = document.getElementById('btn-asignar');
+btn_asignar.addEventListener('click', ()=>{
+    asignarLibro(id_ref);
+});
+
 const btn_update = document.getElementById('btn-update');
 btn_update.addEventListener('click', ()=>{
     modificarLibros(id_ref);
@@ -173,10 +229,12 @@ function generarSelectUsuarios(){
     const datalist = document.getElementById('user-AL');
 
     $.ajax({
+        headers: {
+            'Authorization': `Token ${token}`
+        },
         type:"GET",
         url: listarUser,
         success:function(data){
-            vaciarTabla();
             data.map((e)=>{
                 const option_user = document.createElement('option');
 

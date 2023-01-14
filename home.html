@@ -20,7 +20,13 @@
           <div>
             <div class="d-flex align-items-center">
               <i class="fa fa-user fs-5 text-primary"></i>
-              <p class="d-inline mb-0 text-black-50">Admin</p>
+              <p id="user-logged" class="d-inline mb-0 text-black-50"></p>
+              <div class="btn-group">
+                <button type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                <ul class="dropdown-menu dropdown-menu-end text-center">
+                  <li class=""><button class="btn btn-sm btn-outline-danger" onclick="cerrarSesion()">Cerrar sesión</button></li>
+                </ul>                
+              </div>
             </div>
           </div>
         </div>
@@ -51,39 +57,9 @@
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript">
+      userLogged();
+    </script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Plantilla del modal -->
-<div class="modal" tabindex="-1" id="">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalBasicLabel">Modal title</h5>
-          <button type="button" class="btn-close" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">...</div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>

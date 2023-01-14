@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font-size: 15px; }
 
@@ -37,6 +38,8 @@ html {
     -moz-transform: translate(-2.5rem, -5.4rem);
     -ms-transform: translate(-2.5rem, -5.4rem);
     -o-transform: translate(-2.5rem, -5.4rem); }
+  #pag-autenticacion h4 {
+    font-size: 1.2rem; }
 
 .img-libros {
   width: 40vw; }
@@ -90,11 +93,11 @@ html {
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
-  transition: all .8s ease;
-  -webkit-transition: all .8s ease;
-  -moz-transition: all .8s ease;
-  -ms-transition: all .8s ease;
-  -o-transition: all .8s ease;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
   text-transform: uppercase; }
 
 #pag-home #Gestionar-Usuarios:hover:after {
@@ -111,7 +114,7 @@ html {
   overflow: hidden; }
 
 #pag-home #Gestionar-Modulos::after {
-  content: "Modulos";
+  content: "Módulos";
   font-size: 2rem;
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
@@ -135,11 +138,11 @@ html {
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
-  transition: all .8s ease;
-  -webkit-transition: all .8s ease;
-  -moz-transition: all .8s ease;
-  -ms-transition: all .8s ease;
-  -o-transition: all .8s ease;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
   text-transform: uppercase; }
 
 #pag-home #Gestionar-Modulos:hover:after {
@@ -180,11 +183,11 @@ html {
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
-  transition: all .8s ease;
-  -webkit-transition: all .8s ease;
-  -moz-transition: all .8s ease;
-  -ms-transition: all .8s ease;
-  -o-transition: all .8s ease;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
   text-transform: uppercase; }
 
 #pag-home #Gestionar-Libros:hover:after {
@@ -238,6 +241,15 @@ html {
             flex: 0 1 30%;
     height: 45vh; }
 
+  #pag-home #Gestionar-Usuarios::after,
+  #pag-home #Gestionar-Modulos::after,
+  #pag-home #Gestionar-Libros::after {
+    opacity: 0; }
+  #pag-home #Gestionar-Usuarios:hover:after,
+  #pag-home #Gestionar-Modulos:hover:after,
+  #pag-home #Gestionar-Libros:hover:after {
+    opacity: 1; }
+
   #pag-home #Gestionar-Usuarios::after {
     content: "Usuarios";
     height: 45vh;
@@ -249,7 +261,7 @@ html {
     padding: 0; }
 
   #pag-home #Gestionar-Modulos::after {
-    content: "Modulos";
+    content: "Módulos";
     height: 45vh;
     transform: translateY(100%);
     -webkit-transform: translateY(100%);

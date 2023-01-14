@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- cargando estilos -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/> -->
     <link rel="stylesheet" href="css/estilos.css">
 
     <title>El Estante</title>
@@ -17,38 +17,37 @@
 
     <div class="row mt-sm-5">
       <div class="col-12 col-sm-3">
-        <header class="d-flex justify-content-center align-items-end align-items-sm-center shadow-sm">
-          <nav class="navbar navbar-light bg-light fixed-top px-sm-5">
-            <div class="container-fluid">
-              <a class="navbar-brand text-primary" href="#">El Estante</a>
-              <div>
-                <div class="d-flex align-items-center">
-                  <i class="fa fa-user fs-5 text-primary"></i>
-                  <p class="d-inline mb-0 text-black-50">Admin</p>
+        <nav class="navbar navbar-light bg-light fixed-top px-sm-5">
+          <div class="container-fluid">
+            <a class="navbar-brand text-primary" href="#">El Estante</a>
+            <div>
+              <div class="d-flex align-items-center">
+                <i class="fa fa-user fs-5 text-primary"></i>
+                <p id="user-logged" class="d-inline mb-0 text-black-50"></p>
+                <div class="btn-group">
+                  <button type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                  <ul class="dropdown-menu dropdown-menu-end text-center">
+                    <li class=""><button class="btn btn-sm btn-outline-danger" onclick="cerrarSesion()">Cerrar sesión</button></li>
+                  </ul>                
                 </div>
               </div>
             </div>
-          </nav>
+          </div>
+        </nav>
+        <header class="d-flex justify-content-center align-items-end align-items-sm-center shadow-sm">
           <div class="d-sm-flex flex-sm-column">
             <button class="btn btn-primary btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-insertar-libro">Insertar</button>
-            <!-- <button class="btn btn-success btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-solicitar-libro">Solicitar</button> -->
-            <!-- <button class="btn btn-secondary btn-sm mb-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#modal-mostrar-libro">Mostrar</button> -->
           </div>
         </header>
       </div>
 
       <div class="col-12 col-sm-7 offset-sm-1 d-flex flex-column justify-content-center">
         <section>
-          <!-- <div class="container-fluid w-auto d-flex">
-            <div class="form-floating w-100 my-2 shadow-sm">
-              <select class="form-select" name="filtro" id="floatingSelect" aria-label="Floating label select example">
-                <option selected>Asignatura</option>
-                <option value="1">Fecha</option>
-                <option value="2">Unidades</option>
-              </select>
-              <label for="floatingSelect">Filtrar por:</label>
-            </div>
-          </div> -->
+          
+          <div class="input-group input-group-sm pb-3 mt-3 px-2 px-sm-5">
+            <input id="buscar-libros" placeholder="Filtrar por asignatura" name="usuario" type="text" class="form-control input-BU" aria-label="Small input group" aria-describedby="input-group-sm">
+            <button onclick="listarLibros()" class="input-group-text btn btn-outline-primary" id="input-group-sm-example">Buscar</button>
+          </div>
           
           <table id="tabla" class="table table-hover table-bordered text-center">
             <thead class="table-primary">
@@ -60,21 +59,6 @@
               </tr>
             </thead>
             <tbody id="tabla-tbody">
-              <!-- <tr class="c-pointer" data-bs-toggle="modal" data-bs-target="#modal-modificar-libro">
-                <td>Calculo II</td>
-                <td>5/10</td>
-                <td>670</td>
-              </tr>
-              <tr class="c-pointer" data-bs-toggle="modal" data-bs-target="#modal-modificar-libro">
-                <td>ISW I</td>
-                <td>2/6</td>
-                <td>458</td>
-              </tr>
-              <tr class="c-pointer" data-bs-toggle="modal" data-bs-target="#modal-modificar-libro">
-                <td>Programacion</td>
-                <td>8/12</td>
-                <td>720</td>
-              </tr> -->
             </tbody>
             <tfoot class="table-primary">
               <tr>
@@ -92,12 +76,12 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="modalBasicLabel">Insertar Libro</h5>
-          <!-- <button type="button" class="btn-close" aria-label="Close"></button> -->
+          <button type="button" class="btn-close" onclick="ocultarModal('modal-insertar-libro')" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <form action="">
               <div class="input-group input-group-sm pb-3">
-                <span class="input-group-text" id="input-group-sm-example">Asignatura</span>
+                <span class="input-group-text" id="input-group-sm-example">Nombre</span>
                 <input id="asignatura" name="asignatura" type="text" class="form-control input-IL" aria-label="Small input group" aria-describedby="input-group-sm">
               </div>
               <div class="input-group input-group-sm pb-3">
@@ -123,7 +107,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="modalBasicLabel">Eliminar Libro</h5>
-          <!-- <button type="button" class="btn-close" aria-label="Close"></button> -->
+          <button type="button" class="btn-close" onclick="ocultarModal('modal-eliminar-libro')" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <form action="">
@@ -143,7 +127,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="modalBasicLabel">Mostrar Libro</h5>
-          <!-- <button type="button" class="btn-close" aria-label="Close"></button> -->
+          <button type="button" class="btn-close" onclick="ocultarModal('modal-mostrar-libro')" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <form action="">
@@ -166,16 +150,16 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="modalBasicLabel">Asignar Libro</h5>
-          <!-- <button type="button" class="btn-close" aria-label="Close"></button> -->
+          <button type="button" class="btn-close" onclick="ocultarModal('modal-solicitar-libro')" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <form action="">
-              <input list="user-AL" type="text">
+              <input id="input-user-AL" list="user-AL" type="text">
               <datalist name="usuario-AL" id="user-AL"></datalist>
             </form>
         </div>
         <div class="modal-footer">
-          <button  onclick="validar('input-SL')" type="button" class="btn btn-primary"><i class="fa fa-paperclip"></i>Asignar</button>
+          <button id="btn-asignar" type="button" class="btn btn-primary"><i class="fa fa-paperclip"></i>Asignar</button>
         </div>
       </div>
     </div>
@@ -187,7 +171,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="modalBasicLabel">Modificar Libro</h5>
-              <!-- <button type="button" class="btn-close" aria-label="Close"></button> -->
+              <button type="button" class="btn-close" onclick="ocultarModal('modal-modificar-libro')" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="">
@@ -216,11 +200,15 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/libros.js"></script>
     <script src="js/validaciones.js"></script>
-    <script type="text/javascript" src="js/dataTables.min.js"></script>
+    <script src="js/app.js"></script>
     <script type="text/javascript">
+      userLogged();
+    </script>
+    <!-- <script type="text/javascript" src="js/dataTables.min.js"></script> -->
+    <!-- <script type="text/javascript">
       $(document).ready( function () {
         $('#tabla').DataTable();
       } );
-    </script>
+    </script> -->
 </body>
 </html>
